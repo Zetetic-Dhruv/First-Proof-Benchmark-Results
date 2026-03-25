@@ -1,0 +1,86 @@
+Problem ID,Problem Title,Area,Step ID,Step Summary,Assumption Compliance,Inference Validity,Goal Completion,Generalization Robustness,Verdict,Search Role,Rejection Source,Review Note
+1,Phi^4_3 measure singularity,Quantum field theory,T1,Contradiction via quasi-invariance,1,1,1,1,Accepted,Resolve,,Moderate caveat: quasi-invariance alone does not imply differentiability. The route can be rescued by strengthening the hypothesis or working in a finite-dimensional approximation.
+1,Phi^4_3 measure singularity,Quantum field theory,T2,Finite-dim Fourier projection μN,1,1,1,1,Accepted,Resolve,,Clean.
+1,Phi^4_3 measure singularity,Quantum field theory,T3,Wick theorem for Gaussian variance,1,1,1,1,Accepted,Resolve,,Clean. The combinatorial factor is correct.
+1,Phi^4_3 measure singularity,Quantum field theory,T4,Short-distance singularity → ln(N),1,1,1,1,Accepted,Resolve,,Clean. Verified.
+1,Phi^4_3 measure singularity,Quantum field theory,T5,Inverse Density Argument,1,1,0,1,Partial,Refine gap,,"The Cauchy-Schwarz bridge is algebraically valid, but the required negative-moment bound is not established. The step therefore remains conditional."
+1,Phi^4_3 measure singularity,Quantum field theory,T6,Fatou + hypercontractivity,1,1,1,1,Accepted,Resolve,,"The limit argument needs ""lim inf"" rather than ""lim sup"". The conclusion is correct once the missing bound from the previous step is supplied."
+2,Rankin-Selberg local test vector,Automorphic forms,A1,uQ-twist extraction,1,1,1,1,Accepted,Resolve,,Clean.
+2,Rankin-Selberg local test vector,Automorphic forms,A2,Monomiality criterion,1,1,1,1,Accepted,Resolve,,Minor caveat on the domain of the test function; the main conclusion is unaffected.
+2,Rankin-Selberg local test vector,Automorphic forms,A3,GL₂×GL₁ via Gauss sums,1,1,1,1,Accepted,Resolve,,Clean. The n=1 base case is validated.
+2,Rankin-Selberg local test vector,Automorphic forms,A4,Diagonal shell isolation (essential Whittaker),1,1,1,0,Accepted,Local-only win,,"Clean for the diagonal statement, but the mechanism does not yet control off-diagonal contributions."
+2,Rankin-Selberg local test vector,Automorphic forms,A5,Newform recurrence delta operator,1,0,0,0,Rejected,Invalid inference,Audit,"The claimed delta operator is false as stated: the characteristic polynomial annihilates the full sequence, including the k=0 term. A route of this flavor may still be salvageable with explicit initial-condition data, but this version is invalid."
+2,Rankin-Selberg local test vector,Automorphic forms,R1,Gauss-sum/Iwasawa (higher rank),1,1,0,0,Deferred,Undeveloped route,,
+2,Rankin-Selberg local test vector,Automorphic forms,R2,Mirabolic/Kirillov (higher rank),1,1,0,0,Deferred,Undeveloped route,,
+2,Rankin-Selberg local test vector,Automorphic forms,X1,Functional equation / ε-factor,1,1,0,0,Rejected,Eliminate route,Agent,Route correctly ruled out: there is no robust mapping from the uQ-shift to the required Fourier-transform data.
+2,Rankin-Selberg local test vector,Automorphic forms,X2,Black-box Hecke projection,1,1,0,0,Rejected,Eliminate route,Agent,This route is dominated by the explicit recurrence analysis and does not add a valid mechanism.
+2,Rankin-Selberg local test vector,Automorphic forms,BL1,Controlled-sampling bridge,1,1,0,0,Open,Open bridge,,Explicit bridge conjecture. The statement is well formed but unresolved in this pilot.
+2,Rankin-Selberg local test vector,Automorphic forms,BL2,Diagonal-to-shell bridge,1,1,0,0,Open,Open bridge,,Explicit bridge conjecture marking the remaining obstruction from diagonal control to the full integral.
+3,Markov kernel construction,Probability and algebraic combinatorics,M1,Metropolis-Hastings,1,1,1,0,Accepted,Local-only win,,"Clean at the level of stationarity, but the construction is local-only: it does not address the nontriviality constraint."
+3,Markov kernel construction,Probability and algebraic combinatorics,M1-NT,Nontriviality audit of M1,1,1,0,1,Partial,Refine gap,,"Useful diagnostic: the Metropolis-Hastings route uses the forbidden ratio F^nu/F^mu. The audit correctly isolates the nontriviality gap, but does not solve it."
+3,Markov kernel construction,Probability and algebraic combinatorics,M2,Heat-bath / Gibbs,1,1,0,0,Deferred,Undeveloped route,,
+3,Markov kernel construction,Probability and algebraic combinatorics,M3,Particle-system analogue,1,1,0,0,Deferred,Undeveloped route,,
+3,Markov kernel construction,Probability and algebraic combinatorics,M4,Hecke-stochastic operator,1,1,0,0,Deferred,Undeveloped route,,
+3,Markov kernel construction,Probability and algebraic combinatorics,M5,Queue lift + lumping,1,1,0,0,Deferred,Undeveloped route,,
+3,Markov kernel construction,Probability and algebraic combinatorics,K1,Polynomial-free kernel,1,1,0,0,Partial,Refine gap,,"Row-stochasticity is proved, but invariance of the target measure is not."
+4,Finite free Stam inequality,Free probability,A1,Affine reduction,1,1,1,1,Accepted,Resolve,,Clean.
+4,Finite free Stam inequality,Free probability,A2,Derivative representation Φn,1,1,1,1,Accepted,Resolve,,Clean.
+4,Finite free Stam inequality,Free probability,A3,"Gap parametrization (a,b)",1,1,1,0,Accepted,Local-only win,,Verified. The mechanism is specific to n=3 and does not transfer automatically to larger n.
+4,Finite free Stam inequality,Free probability,A4,"Additive invariants (A,B) under ⊞₃",1,1,1,0,Accepted,Local-only win,,Verified computationally. The invariant structure is genuine for n=3 but does not yet extend further.
+4,Finite free Stam inequality,Free probability,A5,Jensen → Stam for n=3,1,1,1,0,Accepted,Local-only win,,Minor presentation issue in the weighted-average step; the corrected inequality still gives the intended n=3 conclusion.
+4,Finite free Stam inequality,Free probability,R1,Fractional ⊞₃-powers,1,1,0,0,Rejected,Eliminate route,Agent,Explicit counterexample verified computationally. This eliminates the heat-flow or semigroup interpolation route.
+4,Finite free Stam inequality,Free probability,R2,Invariant theory for n=4,1,1,0,0,Rejected,Eliminate route,Agent,The obstruction is correctly identified: the n=3 invariant picture does not lift in a simple way to n=4.
+4,Finite free Stam inequality,Free probability,P1,Even quartics,1,1,0,0,Partial,Refine gap,,"The reduction to a two-parameter inequality is useful, but the final inequality is not closed."
+4,Finite free Stam inequality,Free probability,n=2,Degree 2 (equality),1,1,1,0,Accepted,Local-only win,,Verified. This is a degenerate equality case and does not transfer beyond the quadratic setting.
+5,O-slice connectivity,Equivariant homotopy theory,T1,Geometric fixed points properties,1,1,1,1,Accepted,Resolve,,Clean.
+5,O-slice connectivity,Equivariant homotopy theory,T2,O-slice cells are compact,1,1,1,1,Accepted,Resolve,,Clean.
+5,O-slice connectivity,Equivariant homotopy theory,T3,Slice localization triangle,1,1,1,1,Accepted,Resolve,,"The argument is standard for cellular filtrations, but it should be cited explicitly in a public release."
+5,O-slice connectivity,Equivariant homotopy theory,T4,Detection lemma (Mackey + minimality),1,1,1,1,Accepted,Resolve,,Clean and structurally important.
+5,O-slice connectivity,Equivariant homotopy theory,T5,(⇒) Forward direction,1,0,0,0,Rejected,Invalid inference,Audit,"The forward argument substitutes mu_O(H) where mu_O(H') is required. Because mu_O is not monotone for incomplete transfer systems, the inference is invalid even though the theorem itself may still be true."
+5,O-slice connectivity,Equivariant homotopy theory,T6,(⇐) Backward direction,1,1,1,1,Accepted,Resolve,,Clean.
+6,Schur-complement certificates,Spectral graph theory and algorithms,T1,Schur complement characterization,1,1,1,1,Accepted,Resolve,,Clean.
+6,Schur-complement certificates,Spectral graph theory and algorithms,T2,Effective cut functional,1,1,1,1,Accepted,Resolve,,Clean.
+6,Schur-complement certificates,Spectral graph theory and algorithms,T3,Counterexample (raw cut-test),1,1,1,1,Accepted,Resolve,,Clean.
+6,Schur-complement certificates,Spectral graph theory and algorithms,T4,Two-layer bridging bound,1,1,1,1,Accepted,Resolve,,Clean.
+6,Schur-complement certificates,Spectral graph theory and algorithms,T5,Threshold decomposition,1,1,1,1,Accepted,Resolve,,Clean.
+6,Schur-complement certificates,Spectral graph theory and algorithms,T6,Cut-test ⇒ m-level domination,1,1,1,0,Accepted,Local-only win,,"The proof closes at fixed scale, but one multiplicative factor prevents full transfer to the strongest target statement."
+6,Schur-complement certificates,Spectral graph theory and algorithms,T7,Fixed-T probabilistic certificate,1,1,1,0,Accepted,Local-only win,,"Valid fixed-parameter certificate, but it does not yet transfer to a variable-parameter version."
+7,Q-acyclic universal covers,Topology and geometric group theory,T1,Free module structure,1,1,1,1,Accepted,Resolve,,Clean.
+7,Q-acyclic universal covers,Topology and geometric group theory,T2,Q-acyclic ⇒ free resolution,1,1,1,1,Accepted,Resolve,,Clean.
+7,Q-acyclic universal covers,Topology and geometric group theory,T3,χ(Γ)=χ(M)∈Z,1,1,1,1,Accepted,Resolve,,Clean.
+7,Q-acyclic universal covers,Topology and geometric group theory,T4,Index scaling,1,1,1,1,Accepted,Resolve,,Clean.
+7,Q-acyclic universal covers,Topology and geometric group theory,T5,|J| divides [Γ:H],1,1,1,1,Accepted,Resolve,,Clean.
+7,Q-acyclic universal covers,Topology and geometric group theory,T6,Lifting exact sequence,1,1,1,1,Accepted,Resolve,,Clean.
+7,Q-acyclic universal covers,Topology and geometric group theory,T7,Odd Euler + involution ⇒ χ=e(S)/2,1,1,1,1,Accepted,Resolve,,"Moderate caveat in the torsion argument: one finite-order step is implicit. In the intended PU(2,1) setting the conclusion is still correct."
+7,Q-acyclic universal covers,Topology and geometric group theory,T8,Existence: ball quotient e=63,1,1,0,1,Partial,Refine gap,,"The required existence statement is neither proved nor cited here. If such a surface exists, the rest of the obstruction argument goes through."
+7,Q-acyclic universal covers,Topology and geometric group theory,T9,Brown p-fractional theory,1,1,1,1,Accepted,Resolve,,Clean.
+8,Lagrangian smoothing obstruction,Symplectic topology,T1,Product construction K=C₁×C₂,1,1,1,1,Accepted,Resolve,,Clean.
+8,Lagrangian smoothing obstruction,Symplectic topology,T2,Each face Lagrangian,1,1,1,1,Accepted,Resolve,,Clean.
+8,Lagrangian smoothing obstruction,Symplectic topology,T3,Maslov convention,1,1,1,1,Accepted,Resolve,,Clean.
+8,Lagrangian smoothing obstruction,Symplectic topology,T4,Smooth disk ⇒ μ=0,1,1,1,1,Accepted,Resolve,,Clean.
+8,Lagrangian smoothing obstruction,Symplectic topology,T5,Canonical vertex loop γv,1,1,1,1,Accepted,Resolve,,Clean.
+8,Lagrangian smoothing obstruction,Symplectic topology,T6,μ(γv)=4≠0,1,1,1,1,Accepted,Resolve,,Moderate caveat about orientation when the Lagrangian planes are pi/2 apart; the local smoothing argument resolves it.
+8,Lagrangian smoothing obstruction,Symplectic topology,T7,Boundary Gauss loop ≃ γv,1,1,1,1,Accepted,Resolve,,Clean.
+8,Lagrangian smoothing obstruction,Symplectic topology,T8,Contradiction μ=0 vs μ=4,1,1,1,1,Accepted,Resolve,,Clean.
+9,Rank-one scaling certificate,Algebraic geometry and tensor methods,T1,Necessity: rank-1 ⇒ det pullback,1,1,1,1,Accepted,Resolve,,Clean.
+9,Rank-one scaling certificate,Algebraic geometry and tensor methods,T2,Flattening rank ≤ 4,1,1,1,1,Accepted,Resolve,,Clean.
+9,Rank-one scaling certificate,Algebraic geometry and tensor methods,T3,Slice rank ≤ 2,1,1,1,1,Accepted,Resolve,,Clean.
+9,Rank-one scaling certificate,Algebraic geometry and tensor methods,T4,Tucker decomposition,1,1,1,1,Accepted,Resolve,,Clean.
+9,Rank-one scaling certificate,Algebraic geometry and tensor methods,T5,Slice constraints descend,1,1,1,1,Accepted,Resolve,,Clean.
+9,Rank-one scaling certificate,Algebraic geometry and tensor methods,T6,Core rigidity G~ε,1,1,1,1,Accepted,Resolve,,"The intermediate Grassmannian geometry is compressed, but the overall rigidity argument is sound in outline."
+9,Rank-one scaling certificate,Algebraic geometry and tensor methods,T7,"Plücker in Gr(2,4)",1,1,1,1,Accepted,Resolve,,Clean.
+9,Rank-one scaling certificate,Algebraic geometry and tensor methods,T8,Pencils → Grassmannian lines,1,1,1,1,Accepted,Resolve,,Clean.
+9,Rank-one scaling certificate,Algebraic geometry and tensor methods,T9,Line-preserving rigidity (FTPG),1,1,1,1,Accepted,Resolve,,Minor caveat: the injectivity of the column map should be spelled out explicitly.
+9,Rank-one scaling certificate,Algebraic geometry and tensor methods,T10,Block scaling endgame,1,1,1,1,Accepted,Resolve,,Clean.
+10,Matrix-free PCG for RKHS,Numerical linear algebra and kernel methods,T1,Vec-Kronecker + masking,1,1,1,1,Accepted,Resolve,,Clean.
+10,Matrix-free PCG for RKHS,Numerical linear algebra and kernel methods,T2,Scatter-add matvec,1,1,1,1,Accepted,Resolve,,Clean.
+10,Matrix-free PCG for RKHS,Numerical linear algebra and kernel methods,T3,Implicit row (mixed-radix),1,1,1,1,Accepted,Resolve,,Clean.
+10,Matrix-free PCG for RKHS,Numerical linear algebra and kernel methods,T4,Khatri-Rao Gram identity,1,1,1,1,Accepted,Resolve,,Clean.
+10,Matrix-free PCG for RKHS,Numerical linear algebra and kernel methods,T5,Kronecker preconditioner,1,1,1,1,Accepted,Resolve,,Clean.
+10,Matrix-free PCG for RKHS,Numerical linear algebra and kernel methods,T6,Row-count scaling,1,1,1,1,Accepted,Resolve,,Clean.
+10,Matrix-free PCG for RKHS,Numerical linear algebra and kernel methods,T7,Adaptive scalar α,1,1,1,1,Accepted,Resolve,,Clean.
+10,Matrix-free PCG for RKHS,Numerical linear algebra and kernel methods,T8,SPD property,1,1,1,1,Accepted,Resolve,,Clean.
+10,Matrix-free PCG for RKHS,Numerical linear algebra and kernel methods,T9,Spectrum of M⁻¹Ã,1,1,1,1,Accepted,Resolve,,Clean.
+10,Matrix-free PCG for RKHS,Numerical linear algebra and kernel methods,T10,Matrix Chernoff (template),1,1,1,0,Accepted,Local-only win,,"A useful template with symbolic constants, but the argument is fragile outside the iid-style regime."
+10,Matrix-free PCG for RKHS,Numerical linear algebra and kernel methods,T11,Without-replacement sandwich,1,1,0,0,Partial,Refine gap,,The step depends on external without-replacement matrix concentration results and is not self-contained in this workbook.
+10,Matrix-free PCG for RKHS,Numerical linear algebra and kernel methods,T12,PSD sandwich ⇒ κ bound,1,1,1,1,Accepted,Resolve,,Clean.

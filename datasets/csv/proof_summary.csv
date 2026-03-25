@@ -1,0 +1,11 @@
+Problem ID,Problem Title,Area,Total Steps,Accepted,Rejected,Partial,Deferred,Open,Assumption Compliance Rate,Inference Validity Rate,Goal Completion Rate,Generalization Robustness Rate,No Rejected Step,No Invalid Inference,Fully Goal-Complete,Fully Robust,Overall Outcome,Assessment
+1,Phi^4_3 measure singularity,Quantum field theory,6,5,0,1,0,0,1.00,1.00,0.83,1.00,Yes,Yes,No,Yes,Partial,One missing negative-moment bound remains; the rest of the chain is structurally strong.
+2,Rankin-Selberg local test vector,Automorphic forms,11,4,3,0,2,2,1.00,0.91,0.36,0.27,No,No,No,No,Partial,"The n=1 base case closes, but the higher-rank bridge remains open and one recurrence-based route fails."
+3,Markov kernel construction,Probability and algebraic combinatorics,7,1,0,2,4,0,1.00,1.00,0.14,0.14,Yes,Yes,No,No,Partial,The stationarity route is valid only locally; nontriviality and invariant-measure control remain open.
+4,Finite free Stam inequality,Free probability,9,6,2,1,0,0,1.00,1.00,0.67,0.22,No,Yes,No,No,Partial,"The n<=3 structure is informative, but higher n needs a new mechanism beyond the rejected routes."
+5,O-slice connectivity,Equivariant homotopy theory,6,5,1,0,0,0,1.00,0.83,0.83,0.83,No,No,No,No,Partial,The backward direction is clean; the forward direction fails under non-monotone transfer data.
+6,Schur-complement certificates,Spectral graph theory and algorithms,7,7,0,0,0,0,1.00,1.00,1.00,0.71,Yes,Yes,Yes,No,Accepted,Clean end-to-end proof at the scope attempted.
+7,Q-acyclic universal covers,Topology and geometric group theory,9,8,0,1,0,0,1.00,1.00,0.89,1.00,Yes,Yes,No,Yes,Partial,"The obstruction chain is strong, but one existence premise is not established in the sheet."
+8,Lagrangian smoothing obstruction,Symplectic topology,8,8,0,0,0,0,1.00,1.00,1.00,1.00,Yes,Yes,Yes,Yes,Accepted,A local Maslov-index computation closes the obstruction cleanly.
+9,Rank-one scaling certificate,Algebraic geometry and tensor methods,10,10,0,0,0,0,1.00,1.00,1.00,1.00,Yes,Yes,Yes,Yes,Accepted,A deep rigidity chain closes the argument cleanly and robustly.
+10,Matrix-free PCG for RKHS,Numerical linear algebra and kernel methods,12,11,0,1,0,0,1.00,1.00,0.92,0.83,Yes,Yes,No,No,Mixed,"The algorithmic core is complete, but the without-replacement concentration step remains external."

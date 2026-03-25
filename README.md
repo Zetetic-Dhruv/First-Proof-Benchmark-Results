@@ -453,6 +453,9 @@ flowchart TD
 .
 ├── README.md
 ├── LICENSE
+├── assets/
+│   ├── proof_outcomes.svg               # Quadrant chart of proof outcomes
+│   └── comparison_grid.svg              # Problem-by-problem comparison across submissions
 ├── proofs/
 │   ├── first_proof_benchmark_solutions_1.pdf    # Phi^4_3 measure singularity
 │   ├── first_proof_benchmark_solutions_2.pdf    # Rankin-Selberg local test vector
@@ -465,7 +468,14 @@ flowchart TD
 │   ├── first_proof_benchmark_solutions_9.pdf    # Rank-one scaling certificate
 │   └── first_proof_benchmark_solutions_10.pdf   # Matrix-free PCG for RKHS
 └── datasets/
-    └── first_proof_benchmark_results.xlsx       # Full audited dataset
+    ├── first_proof_benchmark_results.xlsx       # Full audited dataset (formula-linked)
+    └── csv/                                     # Machine-readable CSV exports
+        ├── tactic_data.csv                      # 85 audited steps with computed search roles
+        ├── proof_summary.csv                    # Per-problem rollups with computed rates
+        ├── aggregate_metrics.csv                # Workbook-level counts and rates
+        ├── process_traces.csv                   # Curated high-leverage steps
+        ├── cross_problem_patterns.csv           # Falsifiable hypotheses
+        └── overview.csv                         # Pilot summary and metric dictionary
 ```
 
 ---
