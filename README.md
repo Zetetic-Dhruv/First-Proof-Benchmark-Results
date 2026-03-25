@@ -8,7 +8,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18629234.svg)](https://doi.org/10.5281/zenodo.18629234)
 
-*Our proofs and solutions were archived at the DOI above before official solutions were released. This repository contains the full audited results: a local open-source language model, 8 hours, consumer laptop, zero human intervention.*
+*Our proofs and solutions were archived at the DOI above before official solutions were released. This repository contains the full audited results: GPT-5.2, 8 hours, consumer laptop, zero human intervention.*
 
 </div>
 
@@ -39,6 +39,7 @@ This is a process-level dataset, not a final-answer benchmark. It preserves the 
 - [Verdict Distribution](#verdict-distribution)
 - [Sample Theorems](#sample-theorems)
 - [Proof Highlights](#proof-highlights)
+- [Method and Comparison with OpenAI and Google DeepMind](#method-and-comparison-with-openai-and-google-deepmind)
 - [Cross-Problem Patterns](#cross-problem-patterns)
 - [Search Role Taxonomy](#search-role-taxonomy)
 - [Repository Structure](#repository-structure)
@@ -78,7 +79,7 @@ flowchart LR
 
 | Parameter | Value |
 |---|---|
-| **Model** | Local open-source language model |
+| **Model** | GPT-5.2 |
 | **Hardware** | Consumer laptop |
 | **Runtime** | 8 hours, unattended |
 | **Human intervention** | None during the run |
@@ -103,7 +104,7 @@ Ten problems spanning ten distinct areas of mathematics.
 | 9 | Polynomial certificate for rank-one scaling of determinantal block tensors | Algebraic geometry & tensor methods | 🟢 **Accepted** |
 | 10 | Matrix-free PCG for the mode-$k$ RKHS subproblem with Kronecker structure | Numerical linear algebra & kernel methods | 🟢 **Accepted** |
 
-**Summary.** 4 accepted theorem-level proofs, 4 partial proofs with structural progress, 2 rejected (coherence violations).
+**Summary.** 4 accepted theorem-level proofs, 4 partial proofs with structural progress, 2 rejected.
 
 ![Proof Outcomes by Problem](assets/proof_outcomes.svg?v=2)
 
@@ -250,6 +251,113 @@ The $\mathrm{GL}_2 \times \mathrm{GL}_1$ base case closes completely via explici
 The obstruction chain is strong: $\mathbb{Q}$-acyclicity of the universal cover forces $\chi(\Gamma) = \chi(M) \in \mathbb{Z}$; a lattice $\Gamma < PU(2,1)$ with an involution has $\chi(\Gamma) = 63/2 \notin \mathbb{Z}$; contradiction. The gap: the specific ball-quotient surface with $e(S) = 63$ and the required involution is cited but not constructed in the proof.
 
 </details>
+
+---
+
+## Method and Comparison with OpenAI and Google DeepMind
+
+### The First Proof Benchmark
+
+The [First Proof](https://arxiv.org/abs/2602.05192) benchmark was created by 11 mathematicians: Abouzaid (Stanford), Blumberg (Columbia), Hairer (EPFL/Imperial), Kileel (UT Austin), Kolda (MathSci.ai), Nelson (Aarhus), Spielman (Yale), Srivastava (UC Berkeley), Ward (UT Austin), Weinberger (UChicago), and Williams (Harvard). The group includes a Fields Medalist and two MacArthur Fellows. Problems were released February 5, 2026, with solutions encrypted until February 13. Each problem is a genuine research lemma from the authors' own unpublished work, sampling the true distribution of questions working mathematicians face.
+
+### Our Method: Structured Discovery State Tracking
+
+The key contribution of this work is not the choice of model but the approach. We ran GPT-5.2 as a pure LLM, but treated each proof attempt as a **world model** and imposed a structured discovery protocol on top of it.
+
+The protocol has three components:
+
+**1. Four-gate measurement at every step.** Each candidate proof step is scored on assumption compliance, inference validity, goal completion, and generalization robustness. These measurements are not post-hoc; they are tracked in real time during the search, standardizing the discovery state across all 10 problems.
+
+**2. Structured ignorance logging.** The system maintains an explicit record of what the model knows it does not know. This includes unverified premises, unresolved bridge lemmas, untested generalization paths, and conditional dependencies. The log is not a list of failures; it is a map of the current boundary of knowledge.
+
+**3. Ignorance narrowing.** Across the proof search, the structure of ignorance changes. The system tracks this evolution: from diffuse uncertainty (many plausible routes, no clear obstruction) to precise hypothesis spaces (a single identified gap with known boundary conditions) to incompleteness estimates (a quantified statement of what remains).
+
+```mermaid
+flowchart LR
+    subgraph Standard["Standard Approach (OpenAI, Aletheia)"]
+        direction LR
+        S1["Problem"] --> S2["LLM generates\ncandidate proof"] --> S3["Submit"] --> S4["Binary:\nsolved or not"]
+    end
+
+    subgraph Ours["This Work: Structured Discovery"]
+        direction LR
+        O1["Problem"] --> O2["World model\nconstruction"]
+        O2 --> O3["Discovery state\n(4-gate measurement)"]
+        O3 --> O4["Ignorance log\n(what is unknown)"]
+        O4 --> O5["Structural narrowing\n(diffuse → precise)"]
+        O5 --> O6["Proof +\nprocess trace"]
+        O5 -.->|iterate| O3
+    end
+```
+
+The practical consequence: even when a proof does not close, the output is not a failed attempt but a structured residual, a precise characterization of what remains unknown and why prior routes were eliminated. Six rejected routes in this pilot are not wasted compute; they are permanent boundary information.
+
+### Ignorance Evolution: An Example
+
+Problem 1 ($\Phi^4_3$ measure singularity) illustrates the narrowing process across five audited steps:
+
+```mermaid
+flowchart TD
+    I1["Step T1: Diffuse ignorance\n10+ plausible proof routes\nNo clear obstruction signal"]
+    I1 --> I2["Step T2-T3: Route filtering\nFourier projection identified\nWick theorem validates variance path"]
+    I2 --> I3["Step T4: Obstruction found\nVar(X_N) ~ ln N diverges\nMost routes eliminated"]
+    I3 --> I4["Step T5: Precise residual\nCauchy-Schwarz bridge valid\nSingle gap identified"]
+    I4 --> I5["Final state: Incompleteness estimate\nOne missing bound:\nsup_N E[ρ_N^-2] < ∞\nAll other dependencies resolved"]
+
+    style I1 fill:#fee,stroke:#c00
+    style I2 fill:#ffe,stroke:#aa0
+    style I3 fill:#ffe,stroke:#aa0
+    style I4 fill:#efd,stroke:#0a0
+    style I5 fill:#def,stroke:#06a
+```
+
+The proof starts with diffuse ignorance (many plausible routes) and ends with a single, precisely identified missing premise. This structured residual is reusable: any future system attempting P1 can start from the precise gap rather than repeating the full search.
+
+### Comparison of Submissions
+
+Four groups submitted results on the First Proof benchmark. The problem-by-problem outcomes:
+
+![Problem-by-Problem Results Across Submissions](assets/comparison_grid.svg)
+
+| Dimension | This Work | OpenAI | Aletheia (Google) | Benchmark Authors |
+|-----------|-----------|--------|-------------------|-------------------|
+| **Model** | GPT-5.2 | Internal (unreleased) | Gemini 3 Deep Think | ChatGPT 5.2 Pro + Gemini 3.0 DT |
+| **Hardware** | Consumer laptop | Cloud infrastructure | Cloud infrastructure | Standard |
+| **Human supervision** | None | Limited (semi-autonomous) | None (fully autonomous) | N/A (testing) |
+| **Runtime** | 8 hours | Not disclosed | Within challenge window | Not disclosed |
+| **Problems solved** | 4/10 | 5/10 | 6/10 | 2/10 |
+| **Process data released** | Yes (85 audited steps) | Proofs only | Proofs only | N/A |
+| **Negative evidence preserved** | Yes (6 rejected routes) | No | Partial (4 "no solution") | No |
+| **Pre-release archival** | Yes (Zenodo DOI) | No | No | N/A |
+
+### Problem-by-Problem Analysis
+
+**Problems solved by all systems that attempted them (P9, P10).** These are the most tractable problems. Even the benchmark authors solved them using public models. P9 (rank-one scaling certificate) produced the most robust completion in our pilot, dominated by a rigid chain of overdetermined structural lemmas.
+
+**P6: solved by us and OpenAI, not by Aletheia.** Aletheia returned "no solution" on P6 (Schur-complement certificates). Our proof is a clean end-to-end argument. OpenAI also solved it, though Pachocki noted that the rollout was prompted with guidance to use "a BSS barrier type argument," raising questions about the degree of autonomy.
+
+**P2, P5: rejected by us, solved by Aletheia.** Our system identified inference validity failures in both problems. For P2 (Rankin-Selberg), the recurrence-based shell isolation operator was found to kill the full sequence including the base term. For P5 (O-slice), the forward direction relies on a monotonicity step that fails for incomplete transfer systems. Aletheia's solutions to these problems were accepted by expert majority, suggesting either a different proof route or a correct resolution of the issues our audit flagged.
+
+**P7: solved only by Aletheia.** This problem (Q-acyclic universal covers) was described as "atypical, open for several years." Our pilot produced a strong obstruction chain but could not establish the existence premise (a specific ball-quotient surface). Aletheia's inference cost for P7 was an order of magnitude higher than typical.
+
+**P1, P3, P4: unsolved by all autonomous systems.** No fully autonomous system solved these three. OpenAI solved P4 (finite free Stam inequality) with human supervision. Our pilot produced partial results on all three, with the strongest being P1, where four of five steps are clean and a single missing bound is the sole remaining gap.
+
+**P8: solved by us and Aletheia (contested).** Our Maslov-index computation is a clean local obstruction. Aletheia's solution was accepted by 5 of 7 experts but was the only non-unanimous result in their submission.
+
+### What This Approach Adds
+
+The core difference is not in the number of problems solved. On that metric, Aletheia leads (6/10) and OpenAI follows (5/10). The difference is in what the output contains.
+
+OpenAI and Aletheia submitted final proofs. When a proof fails or is not found, nothing is returned. The output is binary: solved or not solved.
+
+This work returns a **structured discovery record** for every problem, including the ones that were not solved. The record contains:
+
+1. **Audited step-level data** with four quality metrics per step, not just a final verdict
+2. **Rejected routes with reasons**, permanently eliminating proof families for future work
+3. **Precise incompleteness estimates**, characterizing what remains unknown and at what granularity
+4. **Cross-problem patterns**, extracting falsifiable hypotheses about when and why proof search succeeds or fails
+
+For the four partial proofs, any future system can start from the structured residual rather than repeating the full search from scratch.
 
 ---
 
@@ -414,7 +522,7 @@ Each step $i$ is scored on four binary gates. Let $N = 85$ be the total number o
 
 > [!IMPORTANT]
 > **For AI and mathematics research:**
-> - A local open-source model can produce auditable proof-search structure, not just candidate final answers
+> - A commodity-hardware run with structured discovery tracking can produce auditable proof-search structure, not just candidate final answers
 > - Route elimination is productive output; the model correctly self-rejected 4 of 6 dead routes
 > - The validity-to-robustness gap is the primary target for improving AI proof discovery systems
 
@@ -451,3 +559,22 @@ If you use this dataset or reference these results, please cite:
 Our solutions and proofs are archived at:
 
 > Dhruv Gupta, Samanway. *First Proof Benchmark: Autonomous Proof Discovery Results.* Zenodo, 2026. [doi:10.5281/zenodo.18629234](https://doi.org/10.5281/zenodo.18629234)
+
+The benchmark itself:
+
+```bibtex
+@article{abouzaid2026firstproof,
+  title   = {First Proof},
+  author  = {Abouzaid, Mohammed and Blumberg, Andrew J. and Hairer, Martin and Kileel, Joe
+             and Kolda, Tamara G. and Nelson, Paul D. and Spielman, Daniel and Srivastava, Nikhil
+             and Ward, Rachel and Weinberger, Shmuel and Williams, Lauren},
+  journal = {arXiv preprint arXiv:2602.05192},
+  year    = {2026}
+}
+```
+
+Related submissions:
+
+> OpenAI. *Our First Proof submissions.* February 2026. [openai.com/index/first-proof-submissions](https://openai.com/index/first-proof-submissions/)
+
+> Feng, T. et al. *Aletheia tackles FirstProof autonomously.* arXiv:2602.21201, 2026. [arxiv.org/abs/2602.21201](https://arxiv.org/abs/2602.21201)

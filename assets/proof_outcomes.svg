@@ -104,5 +104,5 @@
   <circle cx="175" cy="505" r="5" fill="#222"/>
   <text x="185" y="510" font-size="11" fill="#333">Partial</text>
   <polygon points="241,500 247,510 235,510" fill="#c0392b"/>
-  <text x="253" y="510" font-size="11" fill="#333">Rejected (coherence violation)</text>
+  <text x="253" y="510" font-size="11" fill="#333">Rejected</text>
 </svg>

@@ -1,0 +1,121 @@
+<svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" font-family="'Times New Roman', 'Liberation Serif', Georgia, serif" font-size="12">
+  <rect x="0" y="0" width="720" height="280" fill="white"/>
+
+  <!-- Title -->
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold">Problem-by-Problem Results Across Submissions</text>
+
+  <!-- Column headers (P1-P10) -->
+  <text x="248" y="52" text-anchor="middle" font-size="11" font-weight="bold">P1</text>
+  <text x="293" y="52" text-anchor="middle" font-size="11" font-weight="bold">P2</text>
+  <text x="338" y="52" text-anchor="middle" font-size="11" font-weight="bold">P3</text>
+  <text x="383" y="52" text-anchor="middle" font-size="11" font-weight="bold">P4</text>
+  <text x="428" y="52" text-anchor="middle" font-size="11" font-weight="bold">P5</text>
+  <text x="473" y="52" text-anchor="middle" font-size="11" font-weight="bold">P6</text>
+  <text x="518" y="52" text-anchor="middle" font-size="11" font-weight="bold">P7</text>
+  <text x="563" y="52" text-anchor="middle" font-size="11" font-weight="bold">P8</text>
+  <text x="608" y="52" text-anchor="middle" font-size="11" font-weight="bold">P9</text>
+  <text x="653" y="52" text-anchor="middle" font-size="11" font-weight="bold">P10</text>
+
+  <!-- Row labels -->
+  <text x="218" y="87" text-anchor="end" font-size="12" font-weight="bold">This Work (GPT-5.2)</text>
+  <text x="218" y="127" text-anchor="end" font-size="12">OpenAI (internal)</text>
+  <text x="218" y="167" text-anchor="end" font-size="12">Aletheia (Gemini 3 DT)</text>
+  <text x="218" y="207" text-anchor="end" font-size="12" fill="#777">Benchmark Authors</text>
+
+  <!-- Grid lines -->
+  <line x1="225" y1="58" x2="675" y2="58" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="225" y1="98" x2="675" y2="98" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="225" y1="138" x2="675" y2="138" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="225" y1="178" x2="675" y2="178" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="225" y1="218" x2="675" y2="218" stroke="#ddd" stroke-width="0.5"/>
+
+  <!-- Row 1: This Work - P1:partial P2:rejected P3:partial P4:partial P5:rejected P6:accepted P7:partial P8:accepted P9:accepted P10:accepted -->
+  <!-- P1 partial (yellow) -->
+  <circle cx="248" cy="83" r="8" fill="#f0c040"/>
+  <!-- P2 rejected (red) -->
+  <polygon points="248,75 256,91 240,91" fill="#c0392b" transform="translate(45,0)"/>
+  <!-- P3 partial -->
+  <circle cx="338" cy="83" r="8" fill="#f0c040"/>
+  <!-- P4 partial -->
+  <circle cx="383" cy="83" r="8" fill="#f0c040"/>
+  <!-- P5 rejected -->
+  <polygon points="428,75 436,91 420,91" fill="#c0392b"/>
+  <!-- P6 accepted (blue) -->
+  <rect x="465" y="75" width="16" height="16" fill="#2563eb" rx="2"/>
+  <!-- P7 partial -->
+  <circle cx="518" cy="83" r="8" fill="#f0c040"/>
+  <!-- P8 accepted -->
+  <rect x="555" y="75" width="16" height="16" fill="#2563eb" rx="2"/>
+  <!-- P9 accepted -->
+  <rect x="600" y="75" width="16" height="16" fill="#2563eb" rx="2"/>
+  <!-- P10 accepted -->
+  <rect x="645" y="75" width="16" height="16" fill="#2563eb" rx="2"/>
+
+  <!-- Row 2: OpenAI - P1:? P2:retracted P3:? P4:solved P5:solved P6:solved P7:? P8:? P9:solved P10:solved -->
+  <!-- P1 no solution (gray) -->
+  <line x1="243" y1="123" x2="253" y2="123" stroke="#bbb" stroke-width="2"/>
+  <!-- P2 retracted (gray strikethrough) -->
+  <line x1="288" y1="123" x2="298" y2="123" stroke="#bbb" stroke-width="2"/>
+  <!-- P3 no solution -->
+  <line x1="333" y1="123" x2="343" y2="123" stroke="#bbb" stroke-width="2"/>
+  <!-- P4 solved -->
+  <rect x="375" y="115" width="16" height="16" fill="#2563eb" rx="2"/>
+  <!-- P5 solved -->
+  <rect x="420" y="115" width="16" height="16" fill="#2563eb" rx="2"/>
+  <!-- P6 solved -->
+  <rect x="465" y="115" width="16" height="16" fill="#2563eb" rx="2"/>
+  <!-- P7 no solution -->
+  <line x1="513" y1="123" x2="523" y2="123" stroke="#bbb" stroke-width="2"/>
+  <!-- P8 no solution -->
+  <line x1="558" y1="123" x2="568" y2="123" stroke="#bbb" stroke-width="2"/>
+  <!-- P9 solved -->
+  <rect x="600" y="115" width="16" height="16" fill="#2563eb" rx="2"/>
+  <!-- P10 solved -->
+  <rect x="645" y="115" width="16" height="16" fill="#2563eb" rx="2"/>
+
+  <!-- Row 3: Aletheia - P1:none P2:solved P3:none P4:none P5:solved P6:none P7:solved P8:solved* P9:solved P10:solved -->
+  <!-- P1 no solution -->
+  <line x1="243" y1="163" x2="253" y2="163" stroke="#bbb" stroke-width="2"/>
+  <!-- P2 solved -->
+  <rect x="285" y="155" width="16" height="16" fill="#2563eb" rx="2"/>
+  <!-- P3 no solution -->
+  <line x1="333" y1="163" x2="343" y2="163" stroke="#bbb" stroke-width="2"/>
+  <!-- P4 no solution -->
+  <line x1="378" y1="163" x2="388" y2="163" stroke="#bbb" stroke-width="2"/>
+  <!-- P5 solved -->
+  <rect x="420" y="155" width="16" height="16" fill="#2563eb" rx="2"/>
+  <!-- P6 no solution -->
+  <line x1="468" y1="163" x2="478" y2="163" stroke="#bbb" stroke-width="2"/>
+  <!-- P7 solved -->
+  <rect x="510" y="155" width="16" height="16" fill="#2563eb" rx="2"/>
+  <!-- P8 solved (contested) -->
+  <rect x="555" y="155" width="16" height="16" fill="#2563eb" rx="2" stroke="#f0c040" stroke-width="2"/>
+  <!-- P9 solved -->
+  <rect x="600" y="155" width="16" height="16" fill="#2563eb" rx="2"/>
+  <!-- P10 solved -->
+  <rect x="645" y="155" width="16" height="16" fill="#2563eb" rx="2"/>
+
+  <!-- Row 4: Benchmark Authors (public models) - only P9 and P10 -->
+  <line x1="243" y1="203" x2="253" y2="203" stroke="#bbb" stroke-width="2"/>
+  <line x1="288" y1="203" x2="298" y2="203" stroke="#bbb" stroke-width="2"/>
+  <line x1="333" y1="203" x2="343" y2="203" stroke="#bbb" stroke-width="2"/>
+  <line x1="378" y1="203" x2="388" y2="203" stroke="#bbb" stroke-width="2"/>
+  <line x1="423" y1="203" x2="433" y2="203" stroke="#bbb" stroke-width="2"/>
+  <line x1="468" y1="203" x2="478" y2="203" stroke="#bbb" stroke-width="2"/>
+  <line x1="513" y1="203" x2="523" y2="203" stroke="#bbb" stroke-width="2"/>
+  <line x1="558" y1="203" x2="568" y2="203" stroke="#bbb" stroke-width="2"/>
+  <rect x="600" y="195" width="16" height="16" fill="#2563eb" rx="2" opacity="0.5"/>
+  <rect x="645" y="195" width="16" height="16" fill="#2563eb" rx="2" opacity="0.5"/>
+
+  <!-- Legend -->
+  <rect x="230" y="238" width="12" height="12" fill="#2563eb" rx="2"/>
+  <text x="247" y="249" font-size="10" fill="#333">Solved/Accepted</text>
+  <circle cx="326" cy="244" r="6" fill="#f0c040"/>
+  <text x="337" y="249" font-size="10" fill="#333">Partial</text>
+  <polygon points="392,238 398,250 386,250" fill="#c0392b"/>
+  <text x="403" y="249" font-size="10" fill="#333">Rejected</text>
+  <line x1="448" y1="244" x2="460" y2="244" stroke="#bbb" stroke-width="2"/>
+  <text x="465" y="249" font-size="10" fill="#333">No solution / Not attempted</text>
+  <rect x="590" y="238" width="12" height="12" fill="#2563eb" rx="2" stroke="#f0c040" stroke-width="2"/>
+  <text x="607" y="249" font-size="10" fill="#333">Contested (5/7 experts)</text>
+</svg>
