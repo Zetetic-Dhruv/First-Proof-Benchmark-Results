@@ -1,0 +1,1771 @@
+overview:
+  description: Autonomous Proof Discovery Pilot, public dataset.
+  summary: 'Public-language release of an audited pilot run: GPT-5.2, 8-hour unattended execution, consumer laptop, zero human
+    intervention.'
+  novelty_classification:
+    run_setting: A language model produced the proof search record locally on commodity hardware with no human steering during
+      the 8-hour run.
+    measurement_design: The same four step-level gates were tracked during discovery and then re-used in post-hoc audit, making
+      the pilot a closed-loop inquiry record.
+    dataset_design: 'The workbook preserves both positive steps and negative search output: invalid routes, deferred mechanisms,
+      and explicit open bridges.'
+    scientific_signal: Near-ceiling rates on assumption compliance and inference validity, contrasted with much lower generalization
+      robustness, identify transfer as the main bottleneck.
+  value:
+    why_it_matters: This pilot shows that structured discovery tracking can produce auditable proof-search structure, not
+      just candidate final answers. It also produces reusable negative evidence.
+    primary_read: Outright logical breakdown is rare. Most losses come when a locally valid step fails to transport from a
+      special case to the full target.
+    secondary_read: Correct rejection is productive. Four rejected routes were screened out by the model itself, producing
+      durable boundary information.
+    theory: Complete proofs emerge when branch width collapses, late moves become forced, and the remaining step sequence
+      is dominated by robust structural lemmas.
+  metric_dictionary:
+    assumption_compliance: The step stays within the stated assumptions and target setting.
+    inference_validity: The mathematics of the step is correct as written.
+    goal_completion: The local objective of the step is actually achieved, not merely sketched.
+    generalization_robustness: The step remains useful when expanded from a local or special case to the full target.
+  verdict_labels:
+    accepted: Valid and goal-complete at the claimed scope.
+    partial: Promising but unresolved.
+    rejected: Ruled out.
+    deferred: Plausible but insufficiently developed.
+    open: Explicit unresolved bridge or conjecture.
+    mixed: Algorithmic core accepted; one theoretical dependency stays partial.
+tactic_data:
+  description: All 85 audited proof steps with four binary quality metrics, verdicts, computed search roles, and review notes.
+  total_steps: 85
+  steps:
+  - problem_id: 1
+    problem_title: Phi^4_3 measure singularity
+    area: Quantum field theory
+    step_id: T1
+    step_summary: Contradiction via quasi-invariance
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: 'Moderate caveat: quasi-invariance alone does not imply differentiability. The route can be rescued by strengthening
+      the hypothesis or working in a finite-dimensional approximation.'
+  - problem_id: 1
+    problem_title: Phi^4_3 measure singularity
+    area: Quantum field theory
+    step_id: T2
+    step_summary: Finite-dim Fourier projection μN
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 1
+    problem_title: Phi^4_3 measure singularity
+    area: Quantum field theory
+    step_id: T3
+    step_summary: Wick theorem for Gaussian variance
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean. The combinatorial factor is correct.
+  - problem_id: 1
+    problem_title: Phi^4_3 measure singularity
+    area: Quantum field theory
+    step_id: T4
+    step_summary: Short-distance singularity → ln(N)
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean. Verified.
+  - problem_id: 1
+    problem_title: Phi^4_3 measure singularity
+    area: Quantum field theory
+    step_id: T5
+    step_summary: Inverse Density Argument
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 1
+    verdict: partial
+    search_role: refine_gap
+    rejection_source: null
+    review_note: The Cauchy-Schwarz bridge is algebraically valid, but the required negative-moment bound is not established.
+      The step therefore remains conditional.
+  - problem_id: 1
+    problem_title: Phi^4_3 measure singularity
+    area: Quantum field theory
+    step_id: T6
+    step_summary: Fatou + hypercontractivity
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: The limit argument needs "lim inf" rather than "lim sup". The conclusion is correct once the missing bound
+      from the previous step is supplied.
+  - problem_id: 2
+    problem_title: Rankin-Selberg local test vector
+    area: Automorphic forms
+    step_id: A1
+    step_summary: uQ-twist extraction
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 2
+    problem_title: Rankin-Selberg local test vector
+    area: Automorphic forms
+    step_id: A2
+    step_summary: Monomiality criterion
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Minor caveat on the domain of the test function; the main conclusion is unaffected.
+  - problem_id: 2
+    problem_title: Rankin-Selberg local test vector
+    area: Automorphic forms
+    step_id: A3
+    step_summary: GL₂×GL₁ via Gauss sums
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean. The n=1 base case is validated.
+  - problem_id: 2
+    problem_title: Rankin-Selberg local test vector
+    area: Automorphic forms
+    step_id: A4
+    step_summary: Diagonal shell isolation (essential Whittaker)
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 0
+    verdict: accepted
+    search_role: local_only_win
+    rejection_source: null
+    review_note: Clean for the diagonal statement, but the mechanism does not yet control off-diagonal contributions.
+  - problem_id: 2
+    problem_title: Rankin-Selberg local test vector
+    area: Automorphic forms
+    step_id: A5
+    step_summary: Newform recurrence delta operator
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 0
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: rejected
+    search_role: invalid_inference
+    rejection_source: Audit
+    review_note: 'The claimed delta operator is false as stated: the characteristic polynomial annihilates the full sequence,
+      including the k=0 term. A route of this flavor may still be salvageable with explicit initial-condition data, but this
+      version is invalid.'
+  - problem_id: 2
+    problem_title: Rankin-Selberg local test vector
+    area: Automorphic forms
+    step_id: R1
+    step_summary: Gauss-sum/Iwasawa (higher rank)
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: deferred
+    search_role: undeveloped_route
+    rejection_source: null
+    review_note: null
+  - problem_id: 2
+    problem_title: Rankin-Selberg local test vector
+    area: Automorphic forms
+    step_id: R2
+    step_summary: Mirabolic/Kirillov (higher rank)
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: deferred
+    search_role: undeveloped_route
+    rejection_source: null
+    review_note: null
+  - problem_id: 2
+    problem_title: Rankin-Selberg local test vector
+    area: Automorphic forms
+    step_id: X1
+    step_summary: Functional equation / ε-factor
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: rejected
+    search_role: eliminate_route
+    rejection_source: Agent
+    review_note: 'Route correctly ruled out: there is no robust mapping from the uQ-shift to the required Fourier-transform
+      data.'
+  - problem_id: 2
+    problem_title: Rankin-Selberg local test vector
+    area: Automorphic forms
+    step_id: X2
+    step_summary: Black-box Hecke projection
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: rejected
+    search_role: eliminate_route
+    rejection_source: Agent
+    review_note: This route is dominated by the explicit recurrence analysis and does not add a valid mechanism.
+  - problem_id: 2
+    problem_title: Rankin-Selberg local test vector
+    area: Automorphic forms
+    step_id: BL1
+    step_summary: Controlled-sampling bridge
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: open
+    search_role: open_bridge
+    rejection_source: null
+    review_note: Explicit bridge conjecture. The statement is well formed but unresolved in this pilot.
+  - problem_id: 2
+    problem_title: Rankin-Selberg local test vector
+    area: Automorphic forms
+    step_id: BL2
+    step_summary: Diagonal-to-shell bridge
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: open
+    search_role: open_bridge
+    rejection_source: null
+    review_note: Explicit bridge conjecture marking the remaining obstruction from diagonal control to the full integral.
+  - problem_id: 3
+    problem_title: Markov kernel construction
+    area: Probability and algebraic combinatorics
+    step_id: M1
+    step_summary: Metropolis-Hastings
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 0
+    verdict: accepted
+    search_role: local_only_win
+    rejection_source: null
+    review_note: 'Clean at the level of stationarity, but the construction is local-only: it does not address the nontriviality
+      constraint.'
+  - problem_id: 3
+    problem_title: Markov kernel construction
+    area: Probability and algebraic combinatorics
+    step_id: M1-NT
+    step_summary: Nontriviality audit of M1
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 1
+    verdict: partial
+    search_role: refine_gap
+    rejection_source: null
+    review_note: 'Useful diagnostic: the Metropolis-Hastings route uses the forbidden ratio F^nu/F^mu. The audit correctly
+      isolates the nontriviality gap, but does not solve it.'
+  - problem_id: 3
+    problem_title: Markov kernel construction
+    area: Probability and algebraic combinatorics
+    step_id: M2
+    step_summary: Heat-bath / Gibbs
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: deferred
+    search_role: undeveloped_route
+    rejection_source: null
+    review_note: null
+  - problem_id: 3
+    problem_title: Markov kernel construction
+    area: Probability and algebraic combinatorics
+    step_id: M3
+    step_summary: Particle-system analogue
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: deferred
+    search_role: undeveloped_route
+    rejection_source: null
+    review_note: null
+  - problem_id: 3
+    problem_title: Markov kernel construction
+    area: Probability and algebraic combinatorics
+    step_id: M4
+    step_summary: Hecke-stochastic operator
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: deferred
+    search_role: undeveloped_route
+    rejection_source: null
+    review_note: null
+  - problem_id: 3
+    problem_title: Markov kernel construction
+    area: Probability and algebraic combinatorics
+    step_id: M5
+    step_summary: Queue lift + lumping
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: deferred
+    search_role: undeveloped_route
+    rejection_source: null
+    review_note: null
+  - problem_id: 3
+    problem_title: Markov kernel construction
+    area: Probability and algebraic combinatorics
+    step_id: K1
+    step_summary: Polynomial-free kernel
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: partial
+    search_role: refine_gap
+    rejection_source: null
+    review_note: Row-stochasticity is proved, but invariance of the target measure is not.
+  - problem_id: 4
+    problem_title: Finite free Stam inequality
+    area: Free probability
+    step_id: A1
+    step_summary: Affine reduction
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 4
+    problem_title: Finite free Stam inequality
+    area: Free probability
+    step_id: A2
+    step_summary: Derivative representation Φn
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 4
+    problem_title: Finite free Stam inequality
+    area: Free probability
+    step_id: A3
+    step_summary: Gap parametrization (a,b)
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 0
+    verdict: accepted
+    search_role: local_only_win
+    rejection_source: null
+    review_note: Verified. The mechanism is specific to n=3 and does not transfer automatically to larger n.
+  - problem_id: 4
+    problem_title: Finite free Stam inequality
+    area: Free probability
+    step_id: A4
+    step_summary: Additive invariants (A,B) under ⊞₃
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 0
+    verdict: accepted
+    search_role: local_only_win
+    rejection_source: null
+    review_note: Verified computationally. The invariant structure is genuine for n=3 but does not yet extend further.
+  - problem_id: 4
+    problem_title: Finite free Stam inequality
+    area: Free probability
+    step_id: A5
+    step_summary: Jensen → Stam for n=3
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 0
+    verdict: accepted
+    search_role: local_only_win
+    rejection_source: null
+    review_note: Minor presentation issue in the weighted-average step; the corrected inequality still gives the intended
+      n=3 conclusion.
+  - problem_id: 4
+    problem_title: Finite free Stam inequality
+    area: Free probability
+    step_id: R1
+    step_summary: Fractional ⊞₃-powers
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: rejected
+    search_role: eliminate_route
+    rejection_source: Agent
+    review_note: Explicit counterexample verified computationally. This eliminates the heat-flow or semigroup interpolation
+      route.
+  - problem_id: 4
+    problem_title: Finite free Stam inequality
+    area: Free probability
+    step_id: R2
+    step_summary: Invariant theory for n=4
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: rejected
+    search_role: eliminate_route
+    rejection_source: Agent
+    review_note: 'The obstruction is correctly identified: the n=3 invariant picture does not lift in a simple way to n=4.'
+  - problem_id: 4
+    problem_title: Finite free Stam inequality
+    area: Free probability
+    step_id: P1
+    step_summary: Even quartics
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: partial
+    search_role: refine_gap
+    rejection_source: null
+    review_note: The reduction to a two-parameter inequality is useful, but the final inequality is not closed.
+  - problem_id: 4
+    problem_title: Finite free Stam inequality
+    area: Free probability
+    step_id: n=2
+    step_summary: Degree 2 (equality)
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 0
+    verdict: accepted
+    search_role: local_only_win
+    rejection_source: null
+    review_note: Verified. This is a degenerate equality case and does not transfer beyond the quadratic setting.
+  - problem_id: 5
+    problem_title: O-slice connectivity
+    area: Equivariant homotopy theory
+    step_id: T1
+    step_summary: Geometric fixed points properties
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 5
+    problem_title: O-slice connectivity
+    area: Equivariant homotopy theory
+    step_id: T2
+    step_summary: O-slice cells are compact
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 5
+    problem_title: O-slice connectivity
+    area: Equivariant homotopy theory
+    step_id: T3
+    step_summary: Slice localization triangle
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: The argument is standard for cellular filtrations, but it should be cited explicitly in a public release.
+  - problem_id: 5
+    problem_title: O-slice connectivity
+    area: Equivariant homotopy theory
+    step_id: T4
+    step_summary: Detection lemma (Mackey + minimality)
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean and structurally important.
+  - problem_id: 5
+    problem_title: O-slice connectivity
+    area: Equivariant homotopy theory
+    step_id: T5
+    step_summary: (⇒) Forward direction
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 0
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: rejected
+    search_role: invalid_inference
+    rejection_source: Audit
+    review_note: The forward argument substitutes mu_O(H) where mu_O(H') is required. Because mu_O is not monotone for incomplete
+      transfer systems, the inference is invalid even though the theorem itself may still be true.
+  - problem_id: 5
+    problem_title: O-slice connectivity
+    area: Equivariant homotopy theory
+    step_id: T6
+    step_summary: (⇐) Backward direction
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 6
+    problem_title: Schur-complement certificates
+    area: Spectral graph theory and algorithms
+    step_id: T1
+    step_summary: Schur complement characterization
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 6
+    problem_title: Schur-complement certificates
+    area: Spectral graph theory and algorithms
+    step_id: T2
+    step_summary: Effective cut functional
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 6
+    problem_title: Schur-complement certificates
+    area: Spectral graph theory and algorithms
+    step_id: T3
+    step_summary: Counterexample (raw cut-test)
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 6
+    problem_title: Schur-complement certificates
+    area: Spectral graph theory and algorithms
+    step_id: T4
+    step_summary: Two-layer bridging bound
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 6
+    problem_title: Schur-complement certificates
+    area: Spectral graph theory and algorithms
+    step_id: T5
+    step_summary: Threshold decomposition
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 6
+    problem_title: Schur-complement certificates
+    area: Spectral graph theory and algorithms
+    step_id: T6
+    step_summary: Cut-test ⇒ m-level domination
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 0
+    verdict: accepted
+    search_role: local_only_win
+    rejection_source: null
+    review_note: The proof closes at fixed scale, but one multiplicative factor prevents full transfer to the strongest target
+      statement.
+  - problem_id: 6
+    problem_title: Schur-complement certificates
+    area: Spectral graph theory and algorithms
+    step_id: T7
+    step_summary: Fixed-T probabilistic certificate
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 0
+    verdict: accepted
+    search_role: local_only_win
+    rejection_source: null
+    review_note: Valid fixed-parameter certificate, but it does not yet transfer to a variable-parameter version.
+  - problem_id: 7
+    problem_title: Q-acyclic universal covers
+    area: Topology and geometric group theory
+    step_id: T1
+    step_summary: Free module structure
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 7
+    problem_title: Q-acyclic universal covers
+    area: Topology and geometric group theory
+    step_id: T2
+    step_summary: Q-acyclic ⇒ free resolution
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 7
+    problem_title: Q-acyclic universal covers
+    area: Topology and geometric group theory
+    step_id: T3
+    step_summary: χ(Γ)=χ(M)∈Z
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 7
+    problem_title: Q-acyclic universal covers
+    area: Topology and geometric group theory
+    step_id: T4
+    step_summary: Index scaling
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 7
+    problem_title: Q-acyclic universal covers
+    area: Topology and geometric group theory
+    step_id: T5
+    step_summary: '|J| divides [Γ:H]'
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 7
+    problem_title: Q-acyclic universal covers
+    area: Topology and geometric group theory
+    step_id: T6
+    step_summary: Lifting exact sequence
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 7
+    problem_title: Q-acyclic universal covers
+    area: Topology and geometric group theory
+    step_id: T7
+    step_summary: Odd Euler + involution ⇒ χ=e(S)/2
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: 'Moderate caveat in the torsion argument: one finite-order step is implicit. In the intended PU(2,1) setting
+      the conclusion is still correct.'
+  - problem_id: 7
+    problem_title: Q-acyclic universal covers
+    area: Topology and geometric group theory
+    step_id: T8
+    step_summary: 'Existence: ball quotient e=63'
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 1
+    verdict: partial
+    search_role: refine_gap
+    rejection_source: null
+    review_note: The required existence statement is neither proved nor cited here. If such a surface exists, the rest of
+      the obstruction argument goes through.
+  - problem_id: 7
+    problem_title: Q-acyclic universal covers
+    area: Topology and geometric group theory
+    step_id: T9
+    step_summary: Brown p-fractional theory
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 8
+    problem_title: Lagrangian smoothing obstruction
+    area: Symplectic topology
+    step_id: T1
+    step_summary: Product construction K=C₁×C₂
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 8
+    problem_title: Lagrangian smoothing obstruction
+    area: Symplectic topology
+    step_id: T2
+    step_summary: Each face Lagrangian
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 8
+    problem_title: Lagrangian smoothing obstruction
+    area: Symplectic topology
+    step_id: T3
+    step_summary: Maslov convention
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 8
+    problem_title: Lagrangian smoothing obstruction
+    area: Symplectic topology
+    step_id: T4
+    step_summary: Smooth disk ⇒ μ=0
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 8
+    problem_title: Lagrangian smoothing obstruction
+    area: Symplectic topology
+    step_id: T5
+    step_summary: Canonical vertex loop γv
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 8
+    problem_title: Lagrangian smoothing obstruction
+    area: Symplectic topology
+    step_id: T6
+    step_summary: μ(γv)=4≠0
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Moderate caveat about orientation when the Lagrangian planes are pi/2 apart; the local smoothing argument
+      resolves it.
+  - problem_id: 8
+    problem_title: Lagrangian smoothing obstruction
+    area: Symplectic topology
+    step_id: T7
+    step_summary: Boundary Gauss loop ≃ γv
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 8
+    problem_title: Lagrangian smoothing obstruction
+    area: Symplectic topology
+    step_id: T8
+    step_summary: Contradiction μ=0 vs μ=4
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 9
+    problem_title: Rank-one scaling certificate
+    area: Algebraic geometry and tensor methods
+    step_id: T1
+    step_summary: 'Necessity: rank-1 ⇒ det pullback'
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 9
+    problem_title: Rank-one scaling certificate
+    area: Algebraic geometry and tensor methods
+    step_id: T2
+    step_summary: Flattening rank ≤ 4
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 9
+    problem_title: Rank-one scaling certificate
+    area: Algebraic geometry and tensor methods
+    step_id: T3
+    step_summary: Slice rank ≤ 2
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 9
+    problem_title: Rank-one scaling certificate
+    area: Algebraic geometry and tensor methods
+    step_id: T4
+    step_summary: Tucker decomposition
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 9
+    problem_title: Rank-one scaling certificate
+    area: Algebraic geometry and tensor methods
+    step_id: T5
+    step_summary: Slice constraints descend
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 9
+    problem_title: Rank-one scaling certificate
+    area: Algebraic geometry and tensor methods
+    step_id: T6
+    step_summary: Core rigidity G~ε
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: The intermediate Grassmannian geometry is compressed, but the overall rigidity argument is sound in outline.
+  - problem_id: 9
+    problem_title: Rank-one scaling certificate
+    area: Algebraic geometry and tensor methods
+    step_id: T7
+    step_summary: Plücker in Gr(2,4)
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 9
+    problem_title: Rank-one scaling certificate
+    area: Algebraic geometry and tensor methods
+    step_id: T8
+    step_summary: Pencils → Grassmannian lines
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 9
+    problem_title: Rank-one scaling certificate
+    area: Algebraic geometry and tensor methods
+    step_id: T9
+    step_summary: Line-preserving rigidity (FTPG)
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: 'Minor caveat: the injectivity of the column map should be spelled out explicitly.'
+  - problem_id: 9
+    problem_title: Rank-one scaling certificate
+    area: Algebraic geometry and tensor methods
+    step_id: T10
+    step_summary: Block scaling endgame
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 10
+    problem_title: Matrix-free PCG for RKHS
+    area: Numerical linear algebra and kernel methods
+    step_id: T1
+    step_summary: Vec-Kronecker + masking
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 10
+    problem_title: Matrix-free PCG for RKHS
+    area: Numerical linear algebra and kernel methods
+    step_id: T2
+    step_summary: Scatter-add matvec
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 10
+    problem_title: Matrix-free PCG for RKHS
+    area: Numerical linear algebra and kernel methods
+    step_id: T3
+    step_summary: Implicit row (mixed-radix)
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 10
+    problem_title: Matrix-free PCG for RKHS
+    area: Numerical linear algebra and kernel methods
+    step_id: T4
+    step_summary: Khatri-Rao Gram identity
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 10
+    problem_title: Matrix-free PCG for RKHS
+    area: Numerical linear algebra and kernel methods
+    step_id: T5
+    step_summary: Kronecker preconditioner
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 10
+    problem_title: Matrix-free PCG for RKHS
+    area: Numerical linear algebra and kernel methods
+    step_id: T6
+    step_summary: Row-count scaling
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 10
+    problem_title: Matrix-free PCG for RKHS
+    area: Numerical linear algebra and kernel methods
+    step_id: T7
+    step_summary: Adaptive scalar α
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 10
+    problem_title: Matrix-free PCG for RKHS
+    area: Numerical linear algebra and kernel methods
+    step_id: T8
+    step_summary: SPD property
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 10
+    problem_title: Matrix-free PCG for RKHS
+    area: Numerical linear algebra and kernel methods
+    step_id: T9
+    step_summary: Spectrum of M⁻¹Ã
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+  - problem_id: 10
+    problem_title: Matrix-free PCG for RKHS
+    area: Numerical linear algebra and kernel methods
+    step_id: T10
+    step_summary: Matrix Chernoff (template)
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 0
+    verdict: accepted
+    search_role: local_only_win
+    rejection_source: null
+    review_note: A useful template with symbolic constants, but the argument is fragile outside the iid-style regime.
+  - problem_id: 10
+    problem_title: Matrix-free PCG for RKHS
+    area: Numerical linear algebra and kernel methods
+    step_id: T11
+    step_summary: Without-replacement sandwich
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 0
+      generalization_robustness: 0
+    verdict: partial
+    search_role: refine_gap
+    rejection_source: null
+    review_note: The step depends on external without-replacement matrix concentration results and is not self-contained in
+      this workbook.
+  - problem_id: 10
+    problem_title: Matrix-free PCG for RKHS
+    area: Numerical linear algebra and kernel methods
+    step_id: T12
+    step_summary: PSD sandwich ⇒ κ bound
+    metrics:
+      assumption_compliance: 1
+      inference_validity: 1
+      goal_completion: 1
+      generalization_robustness: 1
+    verdict: accepted
+    search_role: resolve
+    rejection_source: null
+    review_note: Clean.
+proof_summary:
+  description: Proof-level rollups for each of the 10 problems, with computed rates and overall outcomes.
+  total_problems: 10
+  proofs:
+  - problem_id: 1
+    problem_title: Phi^4_3 measure singularity
+    area: Quantum field theory
+    total_steps: 6
+    verdict_distribution:
+      accepted: 5
+      partial: 1
+    rates:
+      assumption_compliance: 1.0
+      inference_validity: 1.0
+      goal_completion: 0.833
+      generalization_robustness: 1.0
+    no_rejected_step: true
+    no_invalid_inference: true
+    fully_goal_complete: false
+    fully_robust: true
+    overall_outcome: partial
+    assessment: One missing negative-moment bound remains; the rest of the chain is structurally strong.
+  - problem_id: 2
+    problem_title: Rankin-Selberg local test vector
+    area: Automorphic forms
+    total_steps: 11
+    verdict_distribution:
+      accepted: 4
+      rejected: 3
+      deferred: 2
+      open: 2
+    rates:
+      assumption_compliance: 1.0
+      inference_validity: 0.909
+      goal_completion: 0.364
+      generalization_robustness: 0.273
+    no_rejected_step: false
+    no_invalid_inference: false
+    fully_goal_complete: false
+    fully_robust: false
+    overall_outcome: partial
+    assessment: The n=1 base case closes, but the higher-rank bridge remains open and one recurrence-based route fails.
+  - problem_id: 3
+    problem_title: Markov kernel construction
+    area: Probability and algebraic combinatorics
+    total_steps: 7
+    verdict_distribution:
+      accepted: 1
+      partial: 2
+      deferred: 4
+    rates:
+      assumption_compliance: 1.0
+      inference_validity: 1.0
+      goal_completion: 0.143
+      generalization_robustness: 0.143
+    no_rejected_step: true
+    no_invalid_inference: true
+    fully_goal_complete: false
+    fully_robust: false
+    overall_outcome: partial
+    assessment: The stationarity route is valid only locally; nontriviality and invariant-measure control remain open.
+  - problem_id: 4
+    problem_title: Finite free Stam inequality
+    area: Free probability
+    total_steps: 9
+    verdict_distribution:
+      accepted: 6
+      rejected: 2
+      partial: 1
+    rates:
+      assumption_compliance: 1.0
+      inference_validity: 1.0
+      goal_completion: 0.667
+      generalization_robustness: 0.222
+    no_rejected_step: false
+    no_invalid_inference: true
+    fully_goal_complete: false
+    fully_robust: false
+    overall_outcome: partial
+    assessment: The n<=3 structure is informative, but higher n needs a new mechanism beyond the rejected routes.
+  - problem_id: 5
+    problem_title: O-slice connectivity
+    area: Equivariant homotopy theory
+    total_steps: 6
+    verdict_distribution:
+      accepted: 5
+      rejected: 1
+    rates:
+      assumption_compliance: 1.0
+      inference_validity: 0.833
+      goal_completion: 0.833
+      generalization_robustness: 0.833
+    no_rejected_step: false
+    no_invalid_inference: false
+    fully_goal_complete: false
+    fully_robust: false
+    overall_outcome: partial
+    assessment: The backward direction is clean; the forward direction fails under non-monotone transfer data.
+  - problem_id: 6
+    problem_title: Schur-complement certificates
+    area: Spectral graph theory and algorithms
+    total_steps: 7
+    verdict_distribution:
+      accepted: 7
+    rates:
+      assumption_compliance: 1.0
+      inference_validity: 1.0
+      goal_completion: 1.0
+      generalization_robustness: 0.714
+    no_rejected_step: true
+    no_invalid_inference: true
+    fully_goal_complete: true
+    fully_robust: false
+    overall_outcome: accepted
+    assessment: Clean end-to-end proof at the scope attempted.
+  - problem_id: 7
+    problem_title: Q-acyclic universal covers
+    area: Topology and geometric group theory
+    total_steps: 9
+    verdict_distribution:
+      accepted: 8
+      partial: 1
+    rates:
+      assumption_compliance: 1.0
+      inference_validity: 1.0
+      goal_completion: 0.889
+      generalization_robustness: 1.0
+    no_rejected_step: true
+    no_invalid_inference: true
+    fully_goal_complete: false
+    fully_robust: true
+    overall_outcome: partial
+    assessment: The obstruction chain is strong, but one existence premise is not established in the sheet.
+  - problem_id: 8
+    problem_title: Lagrangian smoothing obstruction
+    area: Symplectic topology
+    total_steps: 8
+    verdict_distribution:
+      accepted: 8
+    rates:
+      assumption_compliance: 1.0
+      inference_validity: 1.0
+      goal_completion: 1.0
+      generalization_robustness: 1.0
+    no_rejected_step: true
+    no_invalid_inference: true
+    fully_goal_complete: true
+    fully_robust: true
+    overall_outcome: accepted
+    assessment: A local Maslov-index computation closes the obstruction cleanly.
+  - problem_id: 9
+    problem_title: Rank-one scaling certificate
+    area: Algebraic geometry and tensor methods
+    total_steps: 10
+    verdict_distribution:
+      accepted: 10
+    rates:
+      assumption_compliance: 1.0
+      inference_validity: 1.0
+      goal_completion: 1.0
+      generalization_robustness: 1.0
+    no_rejected_step: true
+    no_invalid_inference: true
+    fully_goal_complete: true
+    fully_robust: true
+    overall_outcome: accepted
+    assessment: A deep rigidity chain closes the argument cleanly and robustly.
+  - problem_id: 10
+    problem_title: Matrix-free PCG for RKHS
+    area: Numerical linear algebra and kernel methods
+    total_steps: 12
+    verdict_distribution:
+      accepted: 11
+      partial: 1
+    rates:
+      assumption_compliance: 1.0
+      inference_validity: 1.0
+      goal_completion: 0.917
+      generalization_robustness: 0.833
+    no_rejected_step: true
+    no_invalid_inference: true
+    fully_goal_complete: false
+    fully_robust: false
+    overall_outcome: mixed
+    assessment: The algorithmic core is complete, but the without-replacement concentration step remains external.
+aggregate_metrics:
+  description: Aggregate counts, rates, and distributions computed from the tactic and proof data.
+  totals:
+    problems: 10
+    audited_steps: 85
+  verdict_distribution:
+    accepted:
+      count: 65
+      rate: 0.765
+    deferred:
+      count: 6
+      rate: 0.071
+    open:
+      count: 2
+      rate: 0.024
+    partial:
+      count: 6
+      rate: 0.071
+    rejected:
+      count: 6
+      rate: 0.071
+  step_level_pass_rates:
+    assumption_compliance:
+      passing: 85
+      rate: 1.0
+    inference_validity:
+      passing: 83
+      rate: 0.976
+    goal_completion:
+      passing: 65
+      rate: 0.765
+    generalization_robustness:
+      passing: 59
+      rate: 0.694
+  key_gap:
+    inference_validity_minus_robustness: 0.282
+  proof_level_rollups:
+    no_rejected_step: 7
+    no_invalid_inference: 8
+    fully_goal_complete: 3
+    fully_robust: 4
+    accepted_theorem_level: 3
+  search_role_distribution:
+    eliminate_route:
+      count: 4
+      rate: 0.047
+    invalid_inference:
+      count: 2
+      rate: 0.024
+    local_only_win:
+      count: 9
+      rate: 0.106
+    open_bridge:
+      count: 2
+      rate: 0.024
+    refine_gap:
+      count: 6
+      rate: 0.071
+    resolve:
+      count: 56
+      rate: 0.659
+    undeveloped_route:
+      count: 6
+      rate: 0.071
+  rejection_analysis:
+    agent_rejected: 4
+    audit_rejected: 2
+    agent_share: 0.667
+process_traces:
+  description: Curated high-leverage steps showing what each contributed and what boundary information it produced.
+  total_traces: 29
+  traces:
+  - problem_id: 1
+    step_id: T4
+    step_summary: 'Variance divergence: log N'
+    search_function: Resolve
+    positive_contribution: Shows that the Gaussian variance of the cubic smearing diverges logarithmically. This provides
+      the first genuine obstruction signal.
+    boundary_information: Rules out bounded-variance scenarios in which the score function could exist.
+  - problem_id: 1
+    step_id: T5
+    step_summary: Inverse-density bridge
+    search_function: Refine gap
+    positive_contribution: Makes the Gaussian-to-interacting transfer question precise through a Cauchy-Schwarz bridge.
+    boundary_information: 'Exposes the real bottleneck: a negative-moment bound is needed and is not established here.'
+  - problem_id: 2
+    step_id: A2
+    step_summary: Monomiality criterion
+    search_function: Refine gap
+    positive_contribution: Rewrites an analytic nonvanishing condition as a finite shell-isolation target.
+    boundary_information: Rules out all multi-shell candidates and sharply narrows what a valid test vector must do.
+  - problem_id: 2
+    step_id: A3
+    step_summary: GL2 x GL1 base case
+    search_function: Resolve
+    positive_contribution: Closes the rank-one base case through a concrete Gauss-sum calculation.
+    boundary_information: Shows that the base-case mechanism is highly specific and does not by itself transfer to higher
+      rank.
+  - problem_id: 2
+    step_id: A4
+    step_summary: Diagonal shell isolation
+    search_function: Refine gap
+    positive_contribution: Demonstrates that shell isolation is achievable on a diagonal restriction.
+    boundary_information: 'Leaves the central bridge question open: diagonal control is not yet full-integral control.'
+  - problem_id: 2
+    step_id: A5
+    step_summary: Recurrence delta operator
+    search_function: Eliminate (audit)
+    positive_contribution: Invalid as stated; the characteristic polynomial kills the full sequence, including the base term.
+    boundary_information: Eliminates recurrence-only shell isolation. Any successful operator must use initial-condition data,
+      not just the recurrence.
+  - problem_id: 2
+    step_id: X1
+    step_summary: Functional-equation route
+    search_function: Eliminate (agent)
+    positive_contribution: The route does not produce a valid identification with the needed Fourier data.
+    boundary_information: Rules out a tempting but structurally unsupported shortcut.
+  - problem_id: 3
+    step_id: M1
+    step_summary: Metropolis-Hastings
+    search_function: Local-only win
+    positive_contribution: Constructs a stationary Markov chain for the target distribution.
+    boundary_information: Does not touch the actual nontriviality constraint; it solves the easy local task but not the benchmark
+      target.
+  - problem_id: 3
+    step_id: M1-NT
+    step_summary: Nontriviality audit
+    search_function: Eliminate
+    positive_contribution: Shows that the Metropolis-Hastings acceptance ratio uses the forbidden F^nu/F^mu dependence.
+    boundary_information: Rules out the entire family of ratio-based acceptance rules as genuine solutions to this problem.
+  - problem_id: 3
+    step_id: K1
+    step_summary: Polynomial-free kernel
+    search_function: Refine gap
+    positive_contribution: Poses a concrete candidate kernel and proves row-stochasticity under explicit assumptions.
+    boundary_information: 'Leaves one crisp gap: invariance of the target measure is still unproved.'
+  - problem_id: 4
+    step_id: A4+A5
+    step_summary: n=3 invariant reduction
+    search_function: Resolve
+    positive_contribution: Finds additive invariants and closes the n=3 inequality through a convexity argument.
+    boundary_information: Clarifies that the useful structure is genuinely low-dimensional and should not be naively lifted
+      to all n.
+  - problem_id: 4
+    step_id: R1
+    step_summary: Fractional free-convolution powers
+    search_function: Eliminate (agent)
+    positive_contribution: An explicit counterexample shows that the semigroup or heat-flow route breaks real-rootedness.
+    boundary_information: Removes an entire proof paradigm from consideration for the general case.
+  - problem_id: 4
+    step_id: n=2
+    step_summary: Degree-2 equality
+    search_function: Local-only win
+    positive_contribution: Verifies the quadratic equality case exactly.
+    boundary_information: Adds no transferable mechanism beyond the degenerate one-parameter setting.
+  - problem_id: 5
+    step_id: T4
+    step_summary: Detection lemma bridge
+    search_function: Bridge
+    positive_contribution: Connects equivariant cell data to nonequivariant information in geometric fixed points.
+    boundary_information: Shows that any successful characterization must pass through this bridge rather than bypassing fixed-point
+      data.
+  - problem_id: 5
+    step_id: T5
+    step_summary: Forward direction
+    search_function: Eliminate (audit)
+    positive_contribution: Invalid as written because it uses a monotonicity step that fails for incomplete transfer systems.
+    boundary_information: Rules out the naive forward argument and isolates the missing monotone substitute.
+  - problem_id: 5
+    step_id: T6
+    step_summary: Backward direction
+    search_function: Resolve
+    positive_contribution: Closes the reverse implication cleanly through localization plus fixed-point detection.
+    boundary_information: Rules out counterexamples to the backward direction at the intended scope.
+  - problem_id: 6
+    step_id: T1
+    step_summary: Schur-complement characterization
+    search_function: Resolve
+    positive_contribution: Gives the canonical variational characterization of the target notion.
+    boundary_information: Eliminates alternative formulations that ignore the Schur complement.
+  - problem_id: 6
+    step_id: T3
+    step_summary: Raw cut-test counterexample
+    search_function: Eliminate
+    positive_contribution: One graph counterexample shows that raw edge-count conditions are insufficient.
+    boundary_information: Permanently removes the raw cut-test family and justifies the need for effective conductance.
+  - problem_id: 6
+    step_id: T4
+    step_summary: Two-layer bridging bound
+    search_function: Refine gap
+    positive_contribution: Provides an explicit lower bound on the effective cut functional using local data.
+    boundary_information: Shows that the Schur-complement route is computationally tractable rather than purely existential.
+  - problem_id: 7
+    step_id: T3+T7
+    step_summary: Euler-characteristic obstruction
+    search_function: Resolve
+    positive_contribution: Combines integrality from Q-acyclicity with index scaling to force a contradiction under an involution.
+    boundary_information: Rules out a full structural class of candidate realizations, not just one example.
+  - problem_id: 7
+    step_id: T8
+    step_summary: Ball-quotient existence input
+    search_function: Refine gap
+    positive_contribution: 'Turns an assumed input into a concrete literature dependency: a surface with the required Euler
+      characteristic and even automorphism group must be located or proved to exist.'
+    boundary_information: Shows that the remaining gap is not in the obstruction logic above it, but in an external existence
+      premise.
+  - problem_id: 8
+    step_id: T6
+    step_summary: Maslov index computation
+    search_function: Resolve
+    positive_contribution: Computes a nonzero local Maslov index at the model vertex.
+    boundary_information: Rules out local smoothability for this vertex type and provides a durable obstruction.
+  - problem_id: 8
+    step_id: T4+T8
+    step_summary: Disk versus Maslov contradiction
+    search_function: Resolve
+    positive_contribution: Combines the smooth-disk index calculation with the nonzero PL index to force contradiction.
+    boundary_information: Shows that the obstruction is local and does not require global Hamiltonian machinery.
+  - problem_id: 9
+    step_id: T6
+    step_summary: Core rigidity
+    search_function: Resolve
+    positive_contribution: Proves that the core tensor is forced into the determinant orbit once all slice constraints are
+      imposed.
+    boundary_information: Rules out non-determinantal cores and explains why the remaining endgame becomes rigid.
+  - problem_id: 9
+    step_id: T9
+    step_summary: Projective-geometry bridge
+    search_function: Bridge
+    positive_contribution: Links the tensor condition to line-preserving incidence geometry and then invokes projective rigidity.
+    boundary_information: 'Shows that the geometric bridge is not optional: any proof of core rigidity in this dimension must
+      pass through the incidence structure.'
+  - problem_id: 9
+    step_id: T10
+    step_summary: Block-scaling endgame
+    search_function: Resolve
+    positive_contribution: Finishes the proof by showing that each block action collapses to a scalar.
+    boundary_information: Rules out residual block-level freedom and forces rank-one scaling.
+  - problem_id: 10
+    step_id: T2
+    step_summary: Scatter-add matrix-free matvec
+    search_function: Resolve
+    positive_contribution: Gives an exact matrix-free matrix-vector product over the observation set with no O(N) operation.
+    boundary_information: Rules out the need for explicit materialization of the full operator.
+  - problem_id: 10
+    step_id: T5
+    step_summary: Kronecker preconditioner
+    search_function: Refine gap
+    positive_contribution: Introduces a separable surrogate whose inverse decomposes into tractable subproblems.
+    boundary_information: Leaves open whether a sharper preconditioner exists for strongly nonuniform sampling.
+  - problem_id: 10
+    step_id: T11
+    step_summary: Without-replacement concentration
+    search_function: Refine gap
+    positive_contribution: 'Makes the remaining theoretical dependency explicit: concentration for without-replacement matrix
+      sampling.'
+    boundary_information: Shows that the last gap is external theory rather than an algorithmic defect in the method itself.
+cross_problem_patterns:
+  description: Falsifiable hypotheses extracted from the pilot with evidence pointers and testable implications.
+  total_patterns: 14
+  patterns:
+  - category: Positive signal
+    pattern: Local topological obstruction
+    evidence: P7, P8
+    observation: When the proof can compute a rigid local invariant and oppose it to a global requirement, the argument closes
+      or nearly closes.
+    testable_implication: Larger corpora should show higher completion rates when a rigid local invariant is available.
+  - category: Positive signal
+    pattern: Rigidity chains
+    evidence: P9
+    observation: Long chains of overdetermined rigidity lemmas produce the most robust completions in the pilot.
+    testable_implication: Proofs dominated by rigidity lemmas should have the highest generalization-robustness rates.
+  - category: Positive signal
+    pattern: Correct rejection as discovery
+    evidence: P2, P4
+    observation: 'Explicit route elimination is not wasted effort: it permanently shrinks search and improves downstream focus.'
+    testable_implication: Route-elimination counts should correlate positively with eventual completion or with cleaner remaining
+      gaps.
+  - category: Positive signal
+    pattern: Domain reduction
+    evidence: P2-A2
+    observation: Turning analytic conditions into discrete or finite targets opens productive search moves.
+    testable_implication: Steps that reduce infinite or continuous conditions to finite combinatorial ones should predict
+      accepted downstream steps.
+  - category: Failure mode
+    pattern: Base case then stall
+    evidence: P2, P3, P4
+    observation: The model can often close a small case, but the mechanism fails to transport to the full problem.
+    testable_implication: Early local wins with low generalization robustness should predict non-completion.
+  - category: Failure mode
+    pattern: Local-only resolution
+    evidence: P3-M1, P4-n=2
+    observation: Some accepted steps solve a local obligation yet contribute no mechanism that survives to the real target.
+    testable_implication: Accepted steps with goal completion = 1 and generalization robustness = 0 should cluster in structurally
+      hard problems.
+  - category: Failure mode
+    pattern: Generalization-step errors
+    evidence: P2-A5, P5-T5
+    observation: The two outright invalid inferences occur while extending a locally plausible statement beyond its admissible
+      scope.
+    testable_implication: In larger corpora, invalid steps should cluster at generalization moves rather than at base cases.
+  - category: Failure mode
+    pattern: Unresolved premises as hidden dependencies
+    evidence: P1-T5, P7-T8, P10-T11
+    observation: A derivation can be valid conditional on a premise that was never established or cited.
+    testable_implication: Premises described as standard without evidence should show elevated partial-step rates.
+  - category: Structural signal
+    pattern: Generalization robustness separates complete from partial proofs
+    evidence: All problems
+    observation: Assumption compliance and inference validity are near ceiling across the pilot. Most of the meaningful variation
+      sits in generalization robustness.
+    testable_implication: Mid-proof generalization-robustness rate should predict completion better than inference-validity
+      rate.
+  - category: Structural signal
+    pattern: Self-rejection is better at route screening than derivation auditing
+    evidence: P2, P4, P5
+    observation: The model correctly rejects many dead routes, but misses some invalid inferences that only the audit catches.
+    testable_implication: The self-rejected to audit-rejected ratio should stay above 1 if route screening is easier than
+      derivation auditing.
+  - category: Structural signal
+    pattern: Elimination events are compute-efficient
+    evidence: P4-R1, P6-T3, P3-M1-NT
+    observation: A single counterexample or obstruction can remove an entire proof family.
+    testable_implication: Elimination steps should deliver the highest uncertainty reduction per unit compute.
+  - category: Structural signal
+    pattern: Positive and negative discovery remain balanced
+    evidence: All problems
+    observation: The pilot produces both constructions and boundary information. Negative results are not leftovers; they
+      are part of the usable output.
+    testable_implication: Larger corpora should preserve a roughly balanced positive-versus-negative discovery mix.
+  - category: Structural signal
+    pattern: Late steps become forced in complete proofs
+    evidence: P8, P9 versus P3
+    observation: Complete proofs narrow to one viable continuation, while incomplete proofs end with multiple live routes.
+    testable_implication: Late-stage branch width should discriminate complete from partial runs.
+  - category: Structural signal
+    pattern: Single-gap conditionals are closer to repair than strategy failures
+    evidence: P1, P7, P10 versus P2-P4
+    observation: A nearly complete chain with one explicit missing premise is structurally closer to closure than a run with
+      several unresolved mechanisms.
+    testable_implication: One-gap conditionals should convert to complete proofs at higher repair rates than strategy-failure
+      partials.
