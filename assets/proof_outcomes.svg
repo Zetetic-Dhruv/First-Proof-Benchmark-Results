@@ -50,7 +50,8 @@
   <!--
     Coordinate mapping: x_px = 90 + robustness * 490, y_px = 445 - steps * 400
     Accepted (blue squares): P6, P8, P9, P10
-    Partial (black circles): P1, P2, P3, P4, P5, P7
+    Rejected (red triangles): P2, P5 (coherence violations)
+    Partial (black circles): P1, P3, P4, P7
   -->
 
   <!-- === ACCEPTED PROOFS (blue squares) === -->
@@ -77,9 +78,9 @@
   <circle cx="350" cy="397" r="5.5" fill="#222"/>
   <text x="361" y="408" font-size="11" fill="#222">P1 &#934;&#x2074;&#x2083;</text>
 
-  <!-- P2 Rankin-Selberg: robustness=0.28, steps=0.75 => x=227, y=145 -->
-  <circle cx="227" cy="145" r="5.5" fill="#222"/>
-  <text x="238" y="140" font-size="11" fill="#222">P2 Rankin-Selberg</text>
+  <!-- P2 Rankin-Selberg: robustness=0.28, steps=0.75 => x=227, y=145 (REJECTED: coherence violation in A5) -->
+  <polygon points="227,138 234,151 220,151" fill="#c0392b"/>
+  <text x="238" y="140" font-size="11" fill="#c0392b" font-weight="500">P2 Rankin-Selberg</text>
 
   <!-- P3 Markov: robustness=0.22, steps=0.53 => x=198, y=233 -->
   <circle cx="198" cy="233" r="5.5" fill="#222"/>
@@ -89,9 +90,9 @@
   <circle cx="262" cy="305" r="5.5" fill="#222"/>
   <text x="273" y="300" font-size="11" fill="#222">P4 Stam</text>
 
-  <!-- P5 OSlice: robustness=0.15, steps=0.25 => x=164, y=345 -->
-  <circle cx="164" cy="345" r="5.5" fill="#222"/>
-  <text x="175" y="340" font-size="11" fill="#222">P5 OSlice</text>
+  <!-- P5 OSlice: robustness=0.15, steps=0.25 => x=164, y=345 (REJECTED: coherence violation in T5) -->
+  <polygon points="164,338 171,351 157,351" fill="#c0392b"/>
+  <text x="175" y="340" font-size="11" fill="#c0392b" font-weight="500">P5 OSlice</text>
 
   <!-- P7 QAcyclic: robustness=0.57, steps=0.42 => x=369, y=277 -->
   <circle cx="369" cy="277" r="5.5" fill="#222"/>
@@ -103,5 +104,5 @@
   <circle cx="175" cy="505" r="5" fill="#222"/>
   <text x="185" y="510" font-size="11" fill="#333">Partial</text>
   <polygon points="241,500 247,510 235,510" fill="#c0392b"/>
-  <text x="253" y="510" font-size="11" fill="#333">Rejected (none)</text>
+  <text x="253" y="510" font-size="11" fill="#333">Rejected (coherence violation)</text>
 </svg>
