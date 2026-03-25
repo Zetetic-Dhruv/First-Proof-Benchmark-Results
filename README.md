@@ -4,7 +4,7 @@
 
 **Autonomous Proof Discovery Pilot, Public Dataset**
 
-[![Problems](https://img.shields.io/badge/Problems-10-blue)]() [![Proofs Accepted](https://img.shields.io/badge/Proofs_Accepted-3-brightgreen)]() [![Steps Audited](https://img.shields.io/badge/Steps_Audited-85-purple)]() [![Inference Validity](https://img.shields.io/badge/Inference_Validity-98%25-green)]() [![License](https://img.shields.io/badge/License-Apache_2.0-orange)](LICENSE)
+[![Problems](https://img.shields.io/badge/Problems-10-blue)]() [![Proofs Accepted](https://img.shields.io/badge/Proofs_Accepted-4-brightgreen)]() [![Steps Audited](https://img.shields.io/badge/Steps_Audited-85-purple)]() [![Inference Validity](https://img.shields.io/badge/Inference_Validity-98%25-green)]() [![License](https://img.shields.io/badge/License-Apache_2.0-orange)](LICENSE)
 
 *Audited results of a local open-source language model attempting 10 open research-level mathematics problems from the [First Proof](https://firstproof.xyz/) benchmark. 8 hours, consumer laptop, zero human intervention.*
 
@@ -12,22 +12,20 @@
 
 ---
 
-> [!IMPORTANT]
-> **Key Result.** The defining empirical signal of this pilot is the gap between local correctness and robust transfer:
->
-> $$\text{Inference Validity } (98\%) \;-\; \text{Generalization Robustness } (69\%) \;=\; 29 \text{ percentage point gap}$$
->
-> The model rarely produces invalid mathematics. Most failures occur when a locally valid argument does not survive expansion from a special case to the full target.
+### Key Result
 
-> [!NOTE]
-> **Originality.** This is a process-level dataset, not a final-answer benchmark. It preserves the full proof-search structure: accepted steps, rejected routes, deferred mechanisms, and explicit open bridges. Negative evidence (route eliminations, counterexamples, dead-end documentation) is treated as first-class output.
+The defining empirical signal of this pilot is the gap between local correctness and robust transfer. Inference validity stands at 98%; generalization robustness at 69%. That 29 percentage-point drop is the core finding. The model rarely produces invalid mathematics. Most failures occur when a locally valid argument does not survive expansion from a special case to the full target.
 
-> [!TIP]
-> **What this dataset provides:**
-> - 85 audited proof steps with four binary quality metrics and human review notes
-> - 6 rejected routes (4 self-rejected by the model, 2 caught by audit), each permanently eliminating a proof family
-> - Cross-problem patterns yielding falsifiable hypotheses about when AI proof search succeeds or fails
-> - A closed-loop measurement framework reusable for future AI proof discovery evaluation
+### Originality
+
+This is a process-level dataset, not a final-answer benchmark. It preserves the full proof-search structure: accepted steps, rejected routes, deferred mechanisms, and explicit open bridges. Negative evidence (route eliminations, counterexamples, dead-end documentation) is treated as first-class output.
+
+### What This Dataset Provides
+
+- 85 audited proof steps with four binary quality metrics and human review notes
+- 6 rejected routes (4 self-rejected by the model, 2 caught by audit), each permanently eliminating a proof family
+- Cross-problem patterns yielding falsifiable hypotheses about when AI proof search succeeds or fails
+- A closed-loop measurement framework reusable for future AI proof discovery evaluation
 
 ---
 
@@ -101,29 +99,29 @@ Ten problems spanning ten distinct areas of mathematics.
 | 7 | Obstructions to $\mathbb{Q}$-acyclic universal covers for lattices with involutions | Topology & geometric group theory | 🟡 Partial |
 | 8 | Quadrivalent polyhedral Lagrangian surfaces in $\mathbb{R}^4$ need not admit smoothings | Symplectic topology | 🟢 **Accepted** |
 | 9 | Polynomial certificate for rank-one scaling of determinantal block tensors | Algebraic geometry & tensor methods | 🟢 **Accepted** |
-| 10 | Matrix-free PCG for the mode-$k$ RKHS subproblem with Kronecker structure | Numerical linear algebra & kernel methods | 🔵 Mixed |
+| 10 | Matrix-free PCG for the mode-$k$ RKHS subproblem with Kronecker structure | Numerical linear algebra & kernel methods | 🟢 **Accepted** |
 
-**Summary.** 3 accepted theorem-level proofs, 6 partial proofs with structural progress, 1 mixed (algorithmic core accepted, one theoretical dependency remains).
+**Summary.** 4 accepted theorem-level proofs, 6 partial proofs with structural progress.
 
 ```mermaid
 quadrantChart
     title Proof Outcomes by Problem
-    x-axis "Lower Robustness" --> "Higher Robustness"
-    y-axis "Fewer Steps" --> "More Steps"
-    quadrant-1 Accepted & Robust
-    quadrant-2 Large but Partial
-    quadrant-3 Small & Partial
-    quadrant-4 Compact & Accepted
-    P6-Schur: [0.85, 0.30]
-    P8-Lagrangian: [0.90, 0.55]
-    P9-Tensor: [0.95, 0.80]
-    P1-Phi43: [0.60, 0.25]
-    P2-Rankin-Selberg: [0.40, 0.75]
-    P3-Markov: [0.35, 0.50]
-    P4-Stam: [0.45, 0.45]
-    P5-OSlice: [0.30, 0.40]
-    P7-QAcyclic: [0.65, 0.50]
-    P10-PCG: [0.70, 0.65]
+    x-axis Low Robustness --> High Robustness
+    y-axis Few Steps --> Many Steps
+    quadrant-1 Robust, Large
+    quadrant-2 Partial, Large
+    quadrant-3 Partial, Compact
+    quadrant-4 Robust, Compact
+    P6 Schur: [0.85, 0.25]
+    P8 Lagrangian: [0.88, 0.52]
+    P9 Tensor: [0.92, 0.82]
+    P10 PCG: [0.78, 0.68]
+    P1 Phi43: [0.58, 0.20]
+    P2 Rankin-Selberg: [0.35, 0.78]
+    P3 Markov: [0.28, 0.55]
+    P4 Stam: [0.42, 0.42]
+    P5 OSlice: [0.22, 0.35]
+    P7 QAcyclic: [0.62, 0.48]
 ```
 
 ---
