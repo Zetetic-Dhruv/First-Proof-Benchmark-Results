@@ -6,7 +6,9 @@
 
 [![Problems](https://img.shields.io/badge/Problems-10-blue)]() [![Proofs Accepted](https://img.shields.io/badge/Proofs_Accepted-4-brightgreen)]() [![Steps Audited](https://img.shields.io/badge/Steps_Audited-85-purple)]() [![Inference Validity](https://img.shields.io/badge/Inference_Validity-98%25-green)]() [![License](https://img.shields.io/badge/License-Apache_2.0-orange)](LICENSE)
 
-*Audited results of a local open-source language model attempting 10 open research-level mathematics problems from the [First Proof](https://firstproof.xyz/) benchmark. 8 hours, consumer laptop, zero human intervention.*
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18629234.svg)](https://doi.org/10.5281/zenodo.18629234)
+
+*The 10 benchmark problems were released and archived at the DOI above before any solutions were shared. This repository contains the audited solution attempts: a local open-source language model, 8 hours, consumer laptop, zero human intervention.*
 
 </div>
 
@@ -103,7 +105,7 @@ Ten problems spanning ten distinct areas of mathematics.
 
 **Summary.** 4 accepted theorem-level proofs, 6 partial proofs with structural progress.
 
-![Proof Outcomes by Problem](assets/proof_outcomes.svg)
+![Proof Outcomes by Problem](assets/proof_outcomes.svg?v=2)
 
 ---
 
@@ -426,3 +428,25 @@ Each step $i$ is scored on four binary gates. Let $N = 85$ be the total number o
 ## License
 
 See [LICENSE](LICENSE) for details. Apache 2.0.
+
+---
+
+## Citation
+
+If you use this dataset or reference these results, please cite:
+
+```bibtex
+@misc{first_proof_benchmark_results,
+  title        = {First Proof Benchmark Results: Autonomous Proof Discovery Pilot},
+  author       = {Zetetic},
+  year         = {2026},
+  howpublished = {\url{https://github.com/Zetetic-Dhruv/First-Proof-Benchmark-Results}},
+  note         = {Audited solution attempts for 10 open research-level mathematics problems.
+                  The benchmark problems were released and archived before solutions were
+                  shared, see DOI below.}
+}
+```
+
+The original 10 benchmark problems are archived at:
+
+> Zetetic. *First Proof Benchmark Problems.* Zenodo, 2026. [doi:10.5281/zenodo.18629234](https://doi.org/10.5281/zenodo.18629234)
