@@ -103,26 +103,7 @@ Ten problems spanning ten distinct areas of mathematics.
 
 **Summary.** 4 accepted theorem-level proofs, 6 partial proofs with structural progress.
 
-```mermaid
-quadrantChart
-    title Proof Outcomes by Problem
-    x-axis Low Robustness --> High Robustness
-    y-axis Few Steps --> Many Steps
-    quadrant-1 Robust, Large
-    quadrant-2 Partial, Large
-    quadrant-3 Partial, Compact
-    quadrant-4 Robust, Compact
-    P6 Schur: [0.85, 0.25]
-    P8 Lagrangian: [0.88, 0.52]
-    P9 Tensor: [0.92, 0.82]
-    P10 PCG: [0.78, 0.68]
-    P1 Phi43: [0.58, 0.20]
-    P2 Rankin-Selberg: [0.35, 0.78]
-    P3 Markov: [0.28, 0.55]
-    P4 Stam: [0.42, 0.42]
-    P5 OSlice: [0.22, 0.35]
-    P7 QAcyclic: [0.62, 0.48]
-```
+![Proof Outcomes by Problem](assets/proof_outcomes.svg)
 
 ---
 

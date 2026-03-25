@@ -1,0 +1,107 @@
+<svg viewBox="0 0 640 530" xmlns="http://www.w3.org/2000/svg" font-family="'Times New Roman', 'Liberation Serif', Georgia, serif" font-size="12">
+  <!-- Background -->
+  <rect x="0" y="0" width="640" height="530" fill="white"/>
+
+  <!-- Title -->
+  <text x="340" y="28" text-anchor="middle" font-size="17" font-weight="bold">Proof Outcomes by Problem</text>
+
+  <!-- Plot area: (90, 45) to (580, 445), width=490, height=400 -->
+  <!-- Quadrant fill -->
+  <rect x="90" y="45" width="245" height="200" fill="#f8f8fc" stroke="none"/>
+  <rect x="335" y="45" width="245" height="200" fill="#f0f0fa" stroke="none"/>
+  <rect x="90" y="245" width="245" height="200" fill="#fafafa" stroke="none"/>
+  <rect x="335" y="245" width="245" height="200" fill="#f4f4fb" stroke="none"/>
+
+  <!-- Quadrant dividers -->
+  <line x1="335" y1="45" x2="335" y2="445" stroke="#bbb" stroke-width="0.8" stroke-dasharray="6,4"/>
+  <line x1="90" y1="245" x2="580" y2="245" stroke="#bbb" stroke-width="0.8" stroke-dasharray="6,4"/>
+
+  <!-- Border -->
+  <rect x="90" y="45" width="490" height="400" fill="none" stroke="#888" stroke-width="1"/>
+
+  <!-- Quadrant labels (corners) -->
+  <text x="105" y="65" fill="#999" font-size="11" font-style="italic">Partial, Large</text>
+  <text x="470" y="65" fill="#999" font-size="11" font-style="italic">Accepted, Large</text>
+  <text x="105" y="438" fill="#999" font-size="11" font-style="italic">Partial, Compact</text>
+  <text x="455" y="438" fill="#999" font-size="11" font-style="italic">Accepted, Compact</text>
+
+  <!-- X-axis title (below plot) -->
+  <text x="335" y="488" text-anchor="middle" font-size="13" font-style="italic">Generalization Robustness</text>
+  <text x="90" y="472" text-anchor="start" font-size="10" fill="#777">Low</text>
+  <text x="580" y="472" text-anchor="end" font-size="10" fill="#777">High</text>
+  <!-- Arrow -->
+  <line x1="130" y1="468" x2="540" y2="468" stroke="#999" stroke-width="0.7" marker-end="url(#arrowX)"/>
+  <defs>
+    <marker id="arrowX" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#999" stroke-width="0.8"/>
+    </marker>
+    <marker id="arrowY" markerWidth="6" markerHeight="8" refX="3" refY="0" orient="auto">
+      <path d="M0,8 L3,0 L6,8" fill="none" stroke="#999" stroke-width="0.8"/>
+    </marker>
+  </defs>
+
+  <!-- Y-axis title (left of plot, rotated) -->
+  <text x="28" y="245" text-anchor="middle" font-size="13" font-style="italic" transform="rotate(-90, 28, 245)">Proof Complexity</text>
+  <text x="72" y="445" text-anchor="end" font-size="10" fill="#777">Few</text>
+  <text x="72" y="52" text-anchor="end" font-size="10" fill="#777">Many</text>
+  <!-- Arrow -->
+  <line x1="76" y1="420" x2="76" y2="70" stroke="#999" stroke-width="0.7" marker-end="url(#arrowY)"/>
+
+  <!--
+    Coordinate mapping: x_px = 90 + robustness * 490, y_px = 445 - steps * 400
+    Accepted (blue squares): P6, P8, P9, P10
+    Partial (black circles): P1, P2, P3, P4, P5, P7
+  -->
+
+  <!-- === ACCEPTED PROOFS (blue squares) === -->
+
+  <!-- P6 Schur: robustness=0.82, steps=0.15 => x=492, y=385 -->
+  <rect x="487" y="380" width="11" height="11" fill="#2563eb" rx="1"/>
+  <text x="503" y="380" font-size="11" fill="#2563eb" font-weight="500">P6 Schur</text>
+
+  <!-- P8 Lagrangian: robustness=0.85, steps=0.47 => x=507, y=257 -->
+  <rect x="501" y="252" width="11" height="11" fill="#2563eb" rx="1"/>
+  <text x="482" y="248" font-size="11" fill="#2563eb" font-weight="500">P8 Lagrangian</text>
+
+  <!-- P9 Tensor: robustness=0.88, steps=0.87 => x=521, y=97 -->
+  <rect x="516" y="92" width="11" height="11" fill="#2563eb" rx="1"/>
+  <text x="532" y="107" font-size="11" fill="#2563eb" font-weight="500">P9 Tensor</text>
+
+  <!-- P10 PCG: robustness=0.73, steps=0.66 => x=448, y=181 -->
+  <rect x="442" y="176" width="11" height="11" fill="#2563eb" rx="1"/>
+  <text x="458" y="173" font-size="11" fill="#2563eb" font-weight="500">P10 PCG</text>
+
+  <!-- === PARTIAL PROOFS (black circles) === -->
+
+  <!-- P1 Phi43: robustness=0.53, steps=0.12 => x=350, y=397 -->
+  <circle cx="350" cy="397" r="5.5" fill="#222"/>
+  <text x="361" y="408" font-size="11" fill="#222">P1 &#934;&#x2074;&#x2083;</text>
+
+  <!-- P2 Rankin-Selberg: robustness=0.28, steps=0.75 => x=227, y=145 -->
+  <circle cx="227" cy="145" r="5.5" fill="#222"/>
+  <text x="238" y="140" font-size="11" fill="#222">P2 Rankin-Selberg</text>
+
+  <!-- P3 Markov: robustness=0.22, steps=0.53 => x=198, y=233 -->
+  <circle cx="198" cy="233" r="5.5" fill="#222"/>
+  <text x="209" y="228" font-size="11" fill="#222">P3 Markov</text>
+
+  <!-- P4 Stam: robustness=0.35, steps=0.35 => x=262, y=305 -->
+  <circle cx="262" cy="305" r="5.5" fill="#222"/>
+  <text x="273" y="300" font-size="11" fill="#222">P4 Stam</text>
+
+  <!-- P5 OSlice: robustness=0.15, steps=0.25 => x=164, y=345 -->
+  <circle cx="164" cy="345" r="5.5" fill="#222"/>
+  <text x="175" y="340" font-size="11" fill="#222">P5 OSlice</text>
+
+  <!-- P7 QAcyclic: robustness=0.57, steps=0.42 => x=369, y=277 -->
+  <circle cx="369" cy="277" r="5.5" fill="#222"/>
+  <text x="380" y="272" font-size="11" fill="#222">P7 QAcyclic</text>
+
+  <!-- === LEGEND === -->
+  <rect x="92" y="500" width="10" height="10" fill="#2563eb" rx="1"/>
+  <text x="107" y="510" font-size="11" fill="#333">Accepted</text>
+  <circle cx="175" cy="505" r="5" fill="#222"/>
+  <text x="185" y="510" font-size="11" fill="#333">Partial</text>
+  <polygon points="241,500 247,510 235,510" fill="#c0392b"/>
+  <text x="253" y="510" font-size="11" fill="#333">Rejected (none)</text>
+</svg>
