@@ -1,0 +1,184 @@
+description: Proof-level rollups for each of the 10 problems, with computed rates and overall outcomes.
+total_problems: 10
+proofs:
+- problem_id: 1
+  problem_title: Phi^4_3 measure singularity
+  area: Quantum field theory
+  total_steps: 6
+  verdict_distribution:
+    accepted: 5
+    partial: 1
+  rates:
+    assumption_compliance: 1.0
+    inference_validity: 1.0
+    goal_completion: 0.833
+    generalization_robustness: 1.0
+  no_rejected_step: true
+  no_invalid_inference: true
+  fully_goal_complete: false
+  fully_robust: true
+  overall_outcome: partial
+  assessment: One missing negative-moment bound remains; the rest of the chain is structurally strong.
+- problem_id: 2
+  problem_title: Rankin-Selberg local test vector
+  area: Automorphic forms
+  total_steps: 11
+  verdict_distribution:
+    accepted: 4
+    rejected: 3
+    deferred: 2
+    open: 2
+  rates:
+    assumption_compliance: 1.0
+    inference_validity: 0.909
+    goal_completion: 0.364
+    generalization_robustness: 0.273
+  no_rejected_step: false
+  no_invalid_inference: false
+  fully_goal_complete: false
+  fully_robust: false
+  overall_outcome: partial
+  assessment: The n=1 base case closes, but the higher-rank bridge remains open and one recurrence-based route fails.
+- problem_id: 3
+  problem_title: Markov kernel construction
+  area: Probability and algebraic combinatorics
+  total_steps: 7
+  verdict_distribution:
+    accepted: 1
+    partial: 2
+    deferred: 4
+  rates:
+    assumption_compliance: 1.0
+    inference_validity: 1.0
+    goal_completion: 0.143
+    generalization_robustness: 0.143
+  no_rejected_step: true
+  no_invalid_inference: true
+  fully_goal_complete: false
+  fully_robust: false
+  overall_outcome: partial
+  assessment: The stationarity route is valid only locally; nontriviality and invariant-measure control remain open.
+- problem_id: 4
+  problem_title: Finite free Stam inequality
+  area: Free probability
+  total_steps: 9
+  verdict_distribution:
+    accepted: 6
+    rejected: 2
+    partial: 1
+  rates:
+    assumption_compliance: 1.0
+    inference_validity: 1.0
+    goal_completion: 0.667
+    generalization_robustness: 0.222
+  no_rejected_step: false
+  no_invalid_inference: true
+  fully_goal_complete: false
+  fully_robust: false
+  overall_outcome: partial
+  assessment: The n<=3 structure is informative, but higher n needs a new mechanism beyond the rejected routes.
+- problem_id: 5
+  problem_title: O-slice connectivity
+  area: Equivariant homotopy theory
+  total_steps: 6
+  verdict_distribution:
+    accepted: 5
+    rejected: 1
+  rates:
+    assumption_compliance: 1.0
+    inference_validity: 0.833
+    goal_completion: 0.833
+    generalization_robustness: 0.833
+  no_rejected_step: false
+  no_invalid_inference: false
+  fully_goal_complete: false
+  fully_robust: false
+  overall_outcome: partial
+  assessment: The backward direction is clean; the forward direction fails under non-monotone transfer data.
+- problem_id: 6
+  problem_title: Schur-complement certificates
+  area: Spectral graph theory and algorithms
+  total_steps: 7
+  verdict_distribution:
+    accepted: 7
+  rates:
+    assumption_compliance: 1.0
+    inference_validity: 1.0
+    goal_completion: 1.0
+    generalization_robustness: 0.714
+  no_rejected_step: true
+  no_invalid_inference: true
+  fully_goal_complete: true
+  fully_robust: false
+  overall_outcome: accepted
+  assessment: Clean end-to-end proof at the scope attempted.
+- problem_id: 7
+  problem_title: Q-acyclic universal covers
+  area: Topology and geometric group theory
+  total_steps: 9
+  verdict_distribution:
+    accepted: 8
+    partial: 1
+  rates:
+    assumption_compliance: 1.0
+    inference_validity: 1.0
+    goal_completion: 0.889
+    generalization_robustness: 1.0
+  no_rejected_step: true
+  no_invalid_inference: true
+  fully_goal_complete: false
+  fully_robust: true
+  overall_outcome: partial
+  assessment: The obstruction chain is strong, but one existence premise is not established in the sheet.
+- problem_id: 8
+  problem_title: Lagrangian smoothing obstruction
+  area: Symplectic topology
+  total_steps: 8
+  verdict_distribution:
+    accepted: 8
+  rates:
+    assumption_compliance: 1.0
+    inference_validity: 1.0
+    goal_completion: 1.0
+    generalization_robustness: 1.0
+  no_rejected_step: true
+  no_invalid_inference: true
+  fully_goal_complete: true
+  fully_robust: true
+  overall_outcome: accepted
+  assessment: A local Maslov-index computation closes the obstruction cleanly.
+- problem_id: 9
+  problem_title: Rank-one scaling certificate
+  area: Algebraic geometry and tensor methods
+  total_steps: 10
+  verdict_distribution:
+    accepted: 10
+  rates:
+    assumption_compliance: 1.0
+    inference_validity: 1.0
+    goal_completion: 1.0
+    generalization_robustness: 1.0
+  no_rejected_step: true
+  no_invalid_inference: true
+  fully_goal_complete: true
+  fully_robust: true
+  overall_outcome: accepted
+  assessment: A deep rigidity chain closes the argument cleanly and robustly.
+- problem_id: 10
+  problem_title: Matrix-free PCG for RKHS
+  area: Numerical linear algebra and kernel methods
+  total_steps: 12
+  verdict_distribution:
+    accepted: 11
+    partial: 1
+  rates:
+    assumption_compliance: 1.0
+    inference_validity: 1.0
+    goal_completion: 0.917
+    generalization_robustness: 0.833
+  no_rejected_step: true
+  no_invalid_inference: true
+  fully_goal_complete: false
+  fully_robust: false
+  overall_outcome: mixed
+  assessment: The algorithmic core is complete, but the without-replacement concentration step remains external.

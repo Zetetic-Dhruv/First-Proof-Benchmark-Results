@@ -469,13 +469,20 @@ flowchart TD
 │   └── first_proof_benchmark_solutions_10.pdf   # Matrix-free PCG for RKHS
 └── datasets/
     ├── first_proof_benchmark_results.xlsx       # Full audited dataset (formula-linked)
-    └── csv/                                     # Machine-readable CSV exports
-        ├── tactic_data.csv                      # 85 audited steps with computed search roles
-        ├── proof_summary.csv                    # Per-problem rollups with computed rates
-        ├── aggregate_metrics.csv                # Workbook-level counts and rates
-        ├── process_traces.csv                   # Curated high-leverage steps
-        ├── cross_problem_patterns.csv           # Falsifiable hypotheses
-        └── overview.csv                         # Pilot summary and metric dictionary
+    ├── csv/                                     # Machine-readable CSV exports
+    │   ├── tactic_data.csv                      # 85 audited steps with computed search roles
+    │   ├── proof_summary.csv                    # Per-problem rollups with computed rates
+    │   ├── aggregate_metrics.csv                # Workbook-level counts and rates
+    │   ├── process_traces.csv                   # Curated high-leverage steps
+    │   ├── cross_problem_patterns.csv           # Falsifiable hypotheses
+    │   └── overview.csv                         # Pilot summary and metric dictionary
+    └── yaml/                                    # Structured YAML for AI ingestion
+        ├── tactic_data.yaml                     # 85 steps as typed objects with nested metrics
+        ├── proof_summary.yaml                   # 10 proofs with computed rates and verdicts
+        ├── aggregate_metrics.yaml               # Nested counts, rates, distributions, gap analysis
+        ├── process_traces.yaml                  # High-leverage steps with contributions
+        ├── cross_problem_patterns.yaml          # Patterns with evidence and testable implications
+        └── overview.yaml                        # Pilot summary, metric dictionary, verdict labels
 ```
 
 ---

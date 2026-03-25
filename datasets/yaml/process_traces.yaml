@@ -1,0 +1,186 @@
+description: Curated high-leverage steps showing what each contributed and what boundary information it produced.
+total_traces: 29
+traces:
+- problem_id: 1
+  step_id: T4
+  step_summary: 'Variance divergence: log N'
+  search_function: Resolve
+  positive_contribution: Shows that the Gaussian variance of the cubic smearing diverges logarithmically. This provides the
+    first genuine obstruction signal.
+  boundary_information: Rules out bounded-variance scenarios in which the score function could exist.
+- problem_id: 1
+  step_id: T5
+  step_summary: Inverse-density bridge
+  search_function: Refine gap
+  positive_contribution: Makes the Gaussian-to-interacting transfer question precise through a Cauchy-Schwarz bridge.
+  boundary_information: 'Exposes the real bottleneck: a negative-moment bound is needed and is not established here.'
+- problem_id: 2
+  step_id: A2
+  step_summary: Monomiality criterion
+  search_function: Refine gap
+  positive_contribution: Rewrites an analytic nonvanishing condition as a finite shell-isolation target.
+  boundary_information: Rules out all multi-shell candidates and sharply narrows what a valid test vector must do.
+- problem_id: 2
+  step_id: A3
+  step_summary: GL2 x GL1 base case
+  search_function: Resolve
+  positive_contribution: Closes the rank-one base case through a concrete Gauss-sum calculation.
+  boundary_information: Shows that the base-case mechanism is highly specific and does not by itself transfer to higher rank.
+- problem_id: 2
+  step_id: A4
+  step_summary: Diagonal shell isolation
+  search_function: Refine gap
+  positive_contribution: Demonstrates that shell isolation is achievable on a diagonal restriction.
+  boundary_information: 'Leaves the central bridge question open: diagonal control is not yet full-integral control.'
+- problem_id: 2
+  step_id: A5
+  step_summary: Recurrence delta operator
+  search_function: Eliminate (audit)
+  positive_contribution: Invalid as stated; the characteristic polynomial kills the full sequence, including the base term.
+  boundary_information: Eliminates recurrence-only shell isolation. Any successful operator must use initial-condition data,
+    not just the recurrence.
+- problem_id: 2
+  step_id: X1
+  step_summary: Functional-equation route
+  search_function: Eliminate (agent)
+  positive_contribution: The route does not produce a valid identification with the needed Fourier data.
+  boundary_information: Rules out a tempting but structurally unsupported shortcut.
+- problem_id: 3
+  step_id: M1
+  step_summary: Metropolis-Hastings
+  search_function: Local-only win
+  positive_contribution: Constructs a stationary Markov chain for the target distribution.
+  boundary_information: Does not touch the actual nontriviality constraint; it solves the easy local task but not the benchmark
+    target.
+- problem_id: 3
+  step_id: M1-NT
+  step_summary: Nontriviality audit
+  search_function: Eliminate
+  positive_contribution: Shows that the Metropolis-Hastings acceptance ratio uses the forbidden F^nu/F^mu dependence.
+  boundary_information: Rules out the entire family of ratio-based acceptance rules as genuine solutions to this problem.
+- problem_id: 3
+  step_id: K1
+  step_summary: Polynomial-free kernel
+  search_function: Refine gap
+  positive_contribution: Poses a concrete candidate kernel and proves row-stochasticity under explicit assumptions.
+  boundary_information: 'Leaves one crisp gap: invariance of the target measure is still unproved.'
+- problem_id: 4
+  step_id: A4+A5
+  step_summary: n=3 invariant reduction
+  search_function: Resolve
+  positive_contribution: Finds additive invariants and closes the n=3 inequality through a convexity argument.
+  boundary_information: Clarifies that the useful structure is genuinely low-dimensional and should not be naively lifted
+    to all n.
+- problem_id: 4
+  step_id: R1
+  step_summary: Fractional free-convolution powers
+  search_function: Eliminate (agent)
+  positive_contribution: An explicit counterexample shows that the semigroup or heat-flow route breaks real-rootedness.
+  boundary_information: Removes an entire proof paradigm from consideration for the general case.
+- problem_id: 4
+  step_id: n=2
+  step_summary: Degree-2 equality
+  search_function: Local-only win
+  positive_contribution: Verifies the quadratic equality case exactly.
+  boundary_information: Adds no transferable mechanism beyond the degenerate one-parameter setting.
+- problem_id: 5
+  step_id: T4
+  step_summary: Detection lemma bridge
+  search_function: Bridge
+  positive_contribution: Connects equivariant cell data to nonequivariant information in geometric fixed points.
+  boundary_information: Shows that any successful characterization must pass through this bridge rather than bypassing fixed-point
+    data.
+- problem_id: 5
+  step_id: T5
+  step_summary: Forward direction
+  search_function: Eliminate (audit)
+  positive_contribution: Invalid as written because it uses a monotonicity step that fails for incomplete transfer systems.
+  boundary_information: Rules out the naive forward argument and isolates the missing monotone substitute.
+- problem_id: 5
+  step_id: T6
+  step_summary: Backward direction
+  search_function: Resolve
+  positive_contribution: Closes the reverse implication cleanly through localization plus fixed-point detection.
+  boundary_information: Rules out counterexamples to the backward direction at the intended scope.
+- problem_id: 6
+  step_id: T1
+  step_summary: Schur-complement characterization
+  search_function: Resolve
+  positive_contribution: Gives the canonical variational characterization of the target notion.
+  boundary_information: Eliminates alternative formulations that ignore the Schur complement.
+- problem_id: 6
+  step_id: T3
+  step_summary: Raw cut-test counterexample
+  search_function: Eliminate
+  positive_contribution: One graph counterexample shows that raw edge-count conditions are insufficient.
+  boundary_information: Permanently removes the raw cut-test family and justifies the need for effective conductance.
+- problem_id: 6
+  step_id: T4
+  step_summary: Two-layer bridging bound
+  search_function: Refine gap
+  positive_contribution: Provides an explicit lower bound on the effective cut functional using local data.
+  boundary_information: Shows that the Schur-complement route is computationally tractable rather than purely existential.
+- problem_id: 7
+  step_id: T3+T7
+  step_summary: Euler-characteristic obstruction
+  search_function: Resolve
+  positive_contribution: Combines integrality from Q-acyclicity with index scaling to force a contradiction under an involution.
+  boundary_information: Rules out a full structural class of candidate realizations, not just one example.
+- problem_id: 7
+  step_id: T8
+  step_summary: Ball-quotient existence input
+  search_function: Refine gap
+  positive_contribution: 'Turns an assumed input into a concrete literature dependency: a surface with the required Euler
+    characteristic and even automorphism group must be located or proved to exist.'
+  boundary_information: Shows that the remaining gap is not in the obstruction logic above it, but in an external existence
+    premise.
+- problem_id: 8
+  step_id: T6
+  step_summary: Maslov index computation
+  search_function: Resolve
+  positive_contribution: Computes a nonzero local Maslov index at the model vertex.
+  boundary_information: Rules out local smoothability for this vertex type and provides a durable obstruction.
+- problem_id: 8
+  step_id: T4+T8
+  step_summary: Disk versus Maslov contradiction
+  search_function: Resolve
+  positive_contribution: Combines the smooth-disk index calculation with the nonzero PL index to force contradiction.
+  boundary_information: Shows that the obstruction is local and does not require global Hamiltonian machinery.
+- problem_id: 9
+  step_id: T6
+  step_summary: Core rigidity
+  search_function: Resolve
+  positive_contribution: Proves that the core tensor is forced into the determinant orbit once all slice constraints are imposed.
+  boundary_information: Rules out non-determinantal cores and explains why the remaining endgame becomes rigid.
+- problem_id: 9
+  step_id: T9
+  step_summary: Projective-geometry bridge
+  search_function: Bridge
+  positive_contribution: Links the tensor condition to line-preserving incidence geometry and then invokes projective rigidity.
+  boundary_information: 'Shows that the geometric bridge is not optional: any proof of core rigidity in this dimension must
+    pass through the incidence structure.'
+- problem_id: 9
+  step_id: T10
+  step_summary: Block-scaling endgame
+  search_function: Resolve
+  positive_contribution: Finishes the proof by showing that each block action collapses to a scalar.
+  boundary_information: Rules out residual block-level freedom and forces rank-one scaling.
+- problem_id: 10
+  step_id: T2
+  step_summary: Scatter-add matrix-free matvec
+  search_function: Resolve
+  positive_contribution: Gives an exact matrix-free matrix-vector product over the observation set with no O(N) operation.
+  boundary_information: Rules out the need for explicit materialization of the full operator.
+- problem_id: 10
+  step_id: T5
+  step_summary: Kronecker preconditioner
+  search_function: Refine gap
+  positive_contribution: Introduces a separable surrogate whose inverse decomposes into tractable subproblems.
+  boundary_information: Leaves open whether a sharper preconditioner exists for strongly nonuniform sampling.
+- problem_id: 10
+  step_id: T11
+  step_summary: Without-replacement concentration
+  search_function: Refine gap
+  positive_contribution: 'Makes the remaining theoretical dependency explicit: concentration for without-replacement matrix
+    sampling.'
+  boundary_information: Shows that the last gap is external theory rather than an algorithmic defect in the method itself.

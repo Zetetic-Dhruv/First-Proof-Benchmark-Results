@@ -1,0 +1,33 @@
+description: Autonomous Proof Discovery Pilot, public dataset.
+summary: 'Public-language release of an audited pilot run: GPT-5.2, 8-hour unattended execution, consumer laptop, zero human
+  intervention.'
+novelty_classification:
+  run_setting: A language model produced the proof search record locally on commodity hardware with no human steering during
+    the 8-hour run.
+  measurement_design: The same four step-level gates were tracked during discovery and then re-used in post-hoc audit, making
+    the pilot a closed-loop inquiry record.
+  dataset_design: 'The workbook preserves both positive steps and negative search output: invalid routes, deferred mechanisms,
+    and explicit open bridges.'
+  scientific_signal: Near-ceiling rates on assumption compliance and inference validity, contrasted with much lower generalization
+    robustness, identify transfer as the main bottleneck.
+value:
+  why_it_matters: This pilot shows that structured discovery tracking can produce auditable proof-search structure, not just
+    candidate final answers. It also produces reusable negative evidence.
+  primary_read: Outright logical breakdown is rare. Most losses come when a locally valid step fails to transport from a special
+    case to the full target.
+  secondary_read: Correct rejection is productive. Four rejected routes were screened out by the model itself, producing durable
+    boundary information.
+  theory: Complete proofs emerge when branch width collapses, late moves become forced, and the remaining step sequence is
+    dominated by robust structural lemmas.
+metric_dictionary:
+  assumption_compliance: The step stays within the stated assumptions and target setting.
+  inference_validity: The mathematics of the step is correct as written.
+  goal_completion: The local objective of the step is actually achieved, not merely sketched.
+  generalization_robustness: The step remains useful when expanded from a local or special case to the full target.
+verdict_labels:
+  accepted: Valid and goal-complete at the claimed scope.
+  partial: Promising but unresolved.
+  rejected: Ruled out.
+  deferred: Plausible but insufficiently developed.
+  open: Explicit unresolved bridge or conjecture.
+  mixed: Algorithmic core accepted; one theoretical dependency stays partial.

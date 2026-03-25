@@ -1,0 +1,84 @@
+description: Falsifiable hypotheses extracted from the pilot with evidence pointers and testable implications.
+total_patterns: 14
+patterns:
+- category: Positive signal
+  pattern: Local topological obstruction
+  evidence: P7, P8
+  observation: When the proof can compute a rigid local invariant and oppose it to a global requirement, the argument closes
+    or nearly closes.
+  testable_implication: Larger corpora should show higher completion rates when a rigid local invariant is available.
+- category: Positive signal
+  pattern: Rigidity chains
+  evidence: P9
+  observation: Long chains of overdetermined rigidity lemmas produce the most robust completions in the pilot.
+  testable_implication: Proofs dominated by rigidity lemmas should have the highest generalization-robustness rates.
+- category: Positive signal
+  pattern: Correct rejection as discovery
+  evidence: P2, P4
+  observation: 'Explicit route elimination is not wasted effort: it permanently shrinks search and improves downstream focus.'
+  testable_implication: Route-elimination counts should correlate positively with eventual completion or with cleaner remaining
+    gaps.
+- category: Positive signal
+  pattern: Domain reduction
+  evidence: P2-A2
+  observation: Turning analytic conditions into discrete or finite targets opens productive search moves.
+  testable_implication: Steps that reduce infinite or continuous conditions to finite combinatorial ones should predict accepted
+    downstream steps.
+- category: Failure mode
+  pattern: Base case then stall
+  evidence: P2, P3, P4
+  observation: The model can often close a small case, but the mechanism fails to transport to the full problem.
+  testable_implication: Early local wins with low generalization robustness should predict non-completion.
+- category: Failure mode
+  pattern: Local-only resolution
+  evidence: P3-M1, P4-n=2
+  observation: Some accepted steps solve a local obligation yet contribute no mechanism that survives to the real target.
+  testable_implication: Accepted steps with goal completion = 1 and generalization robustness = 0 should cluster in structurally
+    hard problems.
+- category: Failure mode
+  pattern: Generalization-step errors
+  evidence: P2-A5, P5-T5
+  observation: The two outright invalid inferences occur while extending a locally plausible statement beyond its admissible
+    scope.
+  testable_implication: In larger corpora, invalid steps should cluster at generalization moves rather than at base cases.
+- category: Failure mode
+  pattern: Unresolved premises as hidden dependencies
+  evidence: P1-T5, P7-T8, P10-T11
+  observation: A derivation can be valid conditional on a premise that was never established or cited.
+  testable_implication: Premises described as standard without evidence should show elevated partial-step rates.
+- category: Structural signal
+  pattern: Generalization robustness separates complete from partial proofs
+  evidence: All problems
+  observation: Assumption compliance and inference validity are near ceiling across the pilot. Most of the meaningful variation
+    sits in generalization robustness.
+  testable_implication: Mid-proof generalization-robustness rate should predict completion better than inference-validity
+    rate.
+- category: Structural signal
+  pattern: Self-rejection is better at route screening than derivation auditing
+  evidence: P2, P4, P5
+  observation: The model correctly rejects many dead routes, but misses some invalid inferences that only the audit catches.
+  testable_implication: The self-rejected to audit-rejected ratio should stay above 1 if route screening is easier than derivation
+    auditing.
+- category: Structural signal
+  pattern: Elimination events are compute-efficient
+  evidence: P4-R1, P6-T3, P3-M1-NT
+  observation: A single counterexample or obstruction can remove an entire proof family.
+  testable_implication: Elimination steps should deliver the highest uncertainty reduction per unit compute.
+- category: Structural signal
+  pattern: Positive and negative discovery remain balanced
+  evidence: All problems
+  observation: The pilot produces both constructions and boundary information. Negative results are not leftovers; they are
+    part of the usable output.
+  testable_implication: Larger corpora should preserve a roughly balanced positive-versus-negative discovery mix.
+- category: Structural signal
+  pattern: Late steps become forced in complete proofs
+  evidence: P8, P9 versus P3
+  observation: Complete proofs narrow to one viable continuation, while incomplete proofs end with multiple live routes.
+  testable_implication: Late-stage branch width should discriminate complete from partial runs.
+- category: Structural signal
+  pattern: Single-gap conditionals are closer to repair than strategy failures
+  evidence: P1, P7, P10 versus P2-P4
+  observation: A nearly complete chain with one explicit missing premise is structurally closer to closure than a run with
+    several unresolved mechanisms.
+  testable_implication: One-gap conditionals should convert to complete proofs at higher repair rates than strategy-failure
+    partials.

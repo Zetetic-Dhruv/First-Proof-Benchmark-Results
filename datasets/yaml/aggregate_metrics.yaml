@@ -1,0 +1,67 @@
+description: Aggregate counts, rates, and distributions computed from the tactic and proof data.
+totals:
+  problems: 10
+  audited_steps: 85
+verdict_distribution:
+  accepted:
+    count: 65
+    rate: 0.765
+  deferred:
+    count: 6
+    rate: 0.071
+  open:
+    count: 2
+    rate: 0.024
+  partial:
+    count: 6
+    rate: 0.071
+  rejected:
+    count: 6
+    rate: 0.071
+step_level_pass_rates:
+  assumption_compliance:
+    passing: 85
+    rate: 1.0
+  inference_validity:
+    passing: 83
+    rate: 0.976
+  goal_completion:
+    passing: 65
+    rate: 0.765
+  generalization_robustness:
+    passing: 59
+    rate: 0.694
+key_gap:
+  inference_validity_minus_robustness: 0.282
+proof_level_rollups:
+  no_rejected_step: 7
+  no_invalid_inference: 8
+  fully_goal_complete: 3
+  fully_robust: 4
+  accepted_theorem_level: 3
+search_role_distribution:
+  eliminate_route:
+    count: 4
+    rate: 0.047
+  invalid_inference:
+    count: 2
+    rate: 0.024
+  local_only_win:
+    count: 9
+    rate: 0.106
+  open_bridge:
+    count: 2
+    rate: 0.024
+  refine_gap:
+    count: 6
+    rate: 0.071
+  resolve:
+    count: 56
+    rate: 0.659
+  undeveloped_route:
+    count: 6
+    rate: 0.071
+rejection_analysis:
+  agent_rejected: 4
+  audit_rejected: 2
+  agent_share: 0.667
