@@ -322,7 +322,7 @@ Four groups submitted results on the First Proof benchmark. The problem-by-probl
 | Dimension | This Work | OpenAI | Aletheia (Google) | Benchmark Authors |
 |-----------|-----------|--------|-------------------|-------------------|
 | **Model** | GPT-5.2 | Internal (unreleased) | Gemini 3 Deep Think | ChatGPT 5.2 Pro + Gemini 3.0 DT |
-| **Hardware** | Consumer laptop | Cloud infrastructure | Cloud infrastructure | Standard |
+| **Hardware** | Consumer API | Cloud infrastructure | Cloud infrastructure | Standard |
 | **Human supervision** | None | Limited (semi-autonomous) | None (fully autonomous) | N/A (testing) |
 | **Runtime** | 8 hours | Not disclosed | Within challenge window | Not disclosed |
 | **Problems solved** | 4/10 | 5/10 | 6/10 | 2/10 |
