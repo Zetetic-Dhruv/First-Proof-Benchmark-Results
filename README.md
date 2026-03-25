@@ -438,7 +438,7 @@ If you use this dataset or reference these results, please cite:
 ```bibtex
 @misc{first_proof_benchmark_results,
   title        = {First Proof Benchmark Results: Autonomous Proof Discovery Pilot},
-  author       = {Zetetic},
+  author       = {Gupta, Dhruv},
   year         = {2026},
   howpublished = {\url{https://github.com/Zetetic-Dhruv/First-Proof-Benchmark-Results}},
   note         = {Audited solution attempts for 10 open research-level mathematics problems.
@@ -449,4 +449,4 @@ If you use this dataset or reference these results, please cite:
 
 The original 10 benchmark problems are archived at:
 
-> Zetetic. *First Proof Benchmark Problems.* Zenodo, 2026. [doi:10.5281/zenodo.18629234](https://doi.org/10.5281/zenodo.18629234)
+> Dhruv Gupta. *First Proof Benchmark Problems.* Zenodo, 2026. [doi:10.5281/zenodo.18629234](https://doi.org/10.5281/zenodo.18629234)
