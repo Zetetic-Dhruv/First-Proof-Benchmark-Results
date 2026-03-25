@@ -438,12 +438,12 @@ If you use this dataset or reference these results, please cite:
 ```bibtex
 @misc{first_proof_benchmark_results,
   title        = {First Proof Benchmark Results: Autonomous Proof Discovery Pilot},
-  author       = {Gupta, Dhruv},
+  author       = {Gupta, Dhruv and Samanway},
   year         = {2026},
   howpublished = {\url{https://github.com/Zetetic-Dhruv/First-Proof-Benchmark-Results}},
   note         = {Audited solution attempts for 10 open research-level mathematics problems.
                   The benchmark problems were released and archived before solutions were
-                  shared, see DOI below.}
+                  shared, see DOI below. With acknowledgement to Ram Singla.}
 }
 ```
 
