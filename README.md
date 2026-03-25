@@ -93,17 +93,17 @@ Ten problems spanning ten distinct areas of mathematics.
 | # | Problem | Area | Outcome |
 |---|---------|------|---------|
 | 1 | Singularity of the $\Phi^4_3$ measure under smooth translations | Quantum field theory | 🟡 Partial |
-| 2 | Local test vector for Rankin-Selberg integrals on $\mathrm{GL}_{n+1} \times \mathrm{GL}_n$ | Automorphic forms | 🟡 Partial |
+| 2 | Local test vector for Rankin-Selberg integrals on $\mathrm{GL}_{n+1} \times \mathrm{GL}_n$ | Automorphic forms | 🔴 Rejected |
 | 3 | Markov chain with interpolation ASEP/Macdonald stationary weights at $q = 1$ | Probability & algebraic combinatorics | 🟡 Partial |
 | 4 | Finite free Stam inequality for $\Phi_n(p \boxplus_n q)$ | Free probability | 🟡 Partial |
-| 5 | $\mathcal{O}$-slice connectivity and geometric fixed points | Equivariant homotopy theory | 🟡 Partial |
+| 5 | $\mathcal{O}$-slice connectivity and geometric fixed points | Equivariant homotopy theory | 🔴 Rejected |
 | 6 | Schur-complement certificates for $\varepsilon$-light vertex sets | Spectral graph theory & algorithms | 🟢 **Accepted** |
 | 7 | Obstructions to $\mathbb{Q}$-acyclic universal covers for lattices with involutions | Topology & geometric group theory | 🟡 Partial |
 | 8 | Quadrivalent polyhedral Lagrangian surfaces in $\mathbb{R}^4$ need not admit smoothings | Symplectic topology | 🟢 **Accepted** |
 | 9 | Polynomial certificate for rank-one scaling of determinantal block tensors | Algebraic geometry & tensor methods | 🟢 **Accepted** |
 | 10 | Matrix-free PCG for the mode-$k$ RKHS subproblem with Kronecker structure | Numerical linear algebra & kernel methods | 🟢 **Accepted** |
 
-**Summary.** 4 accepted theorem-level proofs, 6 partial proofs with structural progress.
+**Summary.** 4 accepted theorem-level proofs, 4 partial proofs with structural progress, 2 rejected (coherence violations).
 
 ![Proof Outcomes by Problem](assets/proof_outcomes.svg?v=2)
 
