@@ -8,7 +8,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18629234.svg)](https://doi.org/10.5281/zenodo.18629234)
 
-*Our proofs and solutions were archived at the DOI above before official solutions were released. This repository contains the full audited results: GPT-5.2, 8 hours, consumer laptop, zero human intervention.*
+*Our proofs and solutions were archived at the DOI above before official solutions were released. This repository contains the full audited results: GPT-5.2 API, 8 hours, ~$32 compute cost, zero human intervention.*
 
 </div>
 
@@ -39,7 +39,7 @@ This is a process-level dataset, not a final-answer benchmark. It preserves the 
 - [Verdict Distribution](#verdict-distribution)
 - [Sample Theorems](#sample-theorems)
 - [Proof Highlights](#proof-highlights)
-- [Method and Comparison with OpenAI and Google DeepMind](#method-and-comparison-with-openai-and-google-deepmind)
+- [Method and Context Within the First Proof Ecosystem](#method-and-context-within-the-first-proof-ecosystem)
 - [Cross-Problem Patterns](#cross-problem-patterns)
 - [Search Role Taxonomy](#search-role-taxonomy)
 - [Repository Structure](#repository-structure)
@@ -52,7 +52,7 @@ This is a process-level dataset, not a final-answer benchmark. It preserves the 
 
 ## Audit Pipeline
 
-The pilot follows a fixed pipeline: autonomous proof search, then independent step-level audit through four gates, then proof-level rollup.
+The pilot follows a fixed pipeline: autonomous proof search, then independent post-hoc audit through four gates, then proof-level rollup. The audit was conducted by the authors' group and cross-validated by an LLM council (Claude Opus 4.6, GPT-5.4 Pro, Gemini 3 Pro).
 
 ```mermaid
 flowchart LR
@@ -80,10 +80,11 @@ flowchart LR
 | Parameter | Value |
 |---|---|
 | **Model** | GPT-5.2 |
-| **Hardware** | Consumer laptop |
+| **Infrastructure** | Consumer API (GPT-5.2) |
+| **Compute cost** | ~$32 |
 | **Runtime** | 8 hours, unattended |
 | **Human intervention** | None during the run |
-| **Post-hoc audit** | Independent step-level review of all 85 candidate steps |
+| **Post-hoc audit** | Authors' group + LLM council (Claude Opus 4.6, GPT-5.4 Pro, Gemini 3 Pro) |
 
 ---
 
@@ -254,7 +255,7 @@ The obstruction chain is strong: $\mathbb{Q}$-acyclicity of the universal cover 
 
 ---
 
-## Method and Comparison with OpenAI and Google DeepMind
+## Method and Context Within the First Proof Ecosystem
 
 ### The First Proof Benchmark
 
@@ -262,7 +263,7 @@ The [First Proof](https://arxiv.org/abs/2602.05192) benchmark was created by 11 
 
 ### Our Method: Structured Discovery State Tracking
 
-The key contribution of this work is not the choice of model but the approach. We ran GPT-5.2 as a pure LLM, but treated each proof attempt as a **world model** and imposed a structured discovery protocol on top of it.
+The key contribution of this work is not the choice of model but the approach. We ran GPT-5.2 via consumer API access (~$32 total compute cost for the full 8-hour run across all 10 problems), but treated each proof attempt as a **world model** and imposed a structured discovery protocol on top of it.
 
 The protocol has three components:
 
@@ -313,22 +314,21 @@ flowchart TD
 
 The proof starts with diffuse ignorance (many plausible routes) and ends with a single, precisely identified missing premise. This structured residual is reusable: any future system attempting P1 can start from the precise gap rather than repeating the full search.
 
-### Comparison of Submissions
+### Landscape of Submissions
 
-Four groups submitted results on the First Proof benchmark. The problem-by-problem outcomes:
+Several groups engaged with the First Proof benchmark, each contributing differently. OpenAI and Google DeepMind demonstrated frontier model capability on research-level proofs. The benchmark authors established a public-model baseline. This work contributes a complementary dimension: a structured discovery framework that produces auditable process data, not just final proofs.
 
 ![Problem-by-Problem Results Across Submissions](assets/comparison_grid.svg)
 
 | Dimension | This Work | OpenAI | Aletheia (Google) | Benchmark Authors |
 |-----------|-----------|--------|-------------------|-------------------|
-| **Model** | GPT-5.2 | Internal (unreleased) | Gemini 3 Deep Think | ChatGPT 5.2 Pro + Gemini 3.0 DT |
-| **Hardware** | Consumer API | Cloud infrastructure | Cloud infrastructure | Standard |
+| **Model** | GPT-5.2 (consumer API) | Internal (unreleased) | Gemini 3 Deep Think | ChatGPT 5.2 Pro + Gemini 3.0 DT |
+| **Focus** | Discovery framework | Proof generation | Autonomous proof agent | Baseline testing |
 | **Human supervision** | None | Limited (semi-autonomous) | None (fully autonomous) | N/A (testing) |
-| **Runtime** | 8 hours | Not disclosed | Within challenge window | Not disclosed |
+| **Compute cost** | ~$32 | Not disclosed | Not disclosed | Not disclosed |
 | **Problems solved** | 4/10 | 5/10 | 6/10 | 2/10 |
 | **Process data released** | Yes (85 audited steps) | Proofs only | Proofs only | N/A |
 | **Negative evidence preserved** | Yes (6 rejected routes) | No | Partial (4 "no solution") | No |
-| **Pre-release archival** | Yes (Zenodo DOI) | No | No | N/A |
 
 ### Problem-by-Problem Analysis
 
@@ -344,13 +344,11 @@ Four groups submitted results on the First Proof benchmark. The problem-by-probl
 
 **P8: solved by us and Aletheia (contested).** Our Maslov-index computation is a clean local obstruction. Aletheia's solution was accepted by 5 of 7 experts but was the only non-unanimous result in their submission.
 
-### What This Approach Adds
+### Complementary Contribution
 
-The core difference is not in the number of problems solved. On that metric, Aletheia leads (6/10) and OpenAI follows (5/10). The difference is in what the output contains.
+This work does not aim to compete on the number of problems solved. On that metric, Aletheia leads (6/10) and OpenAI follows (5/10), both demonstrating impressive frontier capability. The contribution here is orthogonal: it is about the structure of the output, not its quantity.
 
-OpenAI and Aletheia submitted final proofs. When a proof fails or is not found, nothing is returned. The output is binary: solved or not solved.
-
-This work returns a **structured discovery record** for every problem, including the ones that were not solved. The record contains:
+OpenAI and Aletheia produced high-quality final proofs. This work complements those results by providing a **structured discovery record** for every problem, including the ones that were not solved. The record contains:
 
 1. **Audited step-level data** with four quality metrics per step, not just a final verdict
 2. **Rejected routes with reasons**, permanently eliminating proof families for future work
@@ -363,7 +361,7 @@ For the four partial proofs, any future system can start from the structured res
 
 ## Cross-Problem Patterns
 
-Falsifiable hypotheses extracted from the pilot, grounded in the audited trace.
+Falsifiable hypotheses extracted from the pilot, grounded in the audited trace. These are hypotheses generated from a 10-problem pilot, not validated findings. We present them as falsifiable predictions for future benchmark iterations.
 
 ```mermaid
 flowchart TB
@@ -456,17 +454,18 @@ flowchart TD
 ├── assets/
 │   ├── proof_outcomes.svg               # Quadrant chart of proof outcomes
 │   └── comparison_grid.svg              # Problem-by-problem comparison across submissions
+├── code/                                # Scripts and tooling
 ├── proofs/
-│   ├── first_proof_benchmark_solutions_1.pdf    # Phi^4_3 measure singularity
-│   ├── first_proof_benchmark_solutions_2.pdf    # Rankin-Selberg local test vector
-│   ├── first_proof_benchmark_solutions_3.pdf    # Markov chain construction
-│   ├── first_proof_benchmark_solutions_4.pdf    # Finite free Stam inequality
-│   ├── first_proof_benchmark_solutions_5.pdf    # O-slice connectivity
-│   ├── first_proof_benchmark_solutions_6.pdf    # Schur-complement certificates
-│   ├── first_proof_benchmark_solutions_7.pdf    # Q-acyclic universal covers
-│   ├── first_proof_benchmark_solutions_8.pdf    # Lagrangian smoothing obstruction
-│   ├── first_proof_benchmark_solutions_9.pdf    # Rank-one scaling certificate
-│   └── first_proof_benchmark_solutions_10.pdf   # Matrix-free PCG for RKHS
+│   ├── zetesis_proof_attempt_P1.pdf     # Phi^4_3 measure singularity
+│   ├── zetesis_proof_attempt_P2.pdf     # Rankin-Selberg local test vector
+│   ├── zetesis_proof_attempt_P3.pdf     # Markov chain construction
+│   ├── zetesis_proof_attempt_P4.pdf     # Finite free Stam inequality
+│   ├── zetesis_proof_attempt_P5.pdf     # O-slice connectivity
+│   ├── zetesis_proof_attempt_P6.pdf     # Schur-complement certificates
+│   ├── zetesis_proof_attempt_P7.pdf     # Q-acyclic universal covers
+│   ├── zetesis_proof_attempt_P8.pdf     # Lagrangian smoothing obstruction
+│   ├── zetesis_proof_attempt_P9.pdf     # Rank-one scaling certificate
+│   └── zetesis_proof_attempt_P10.pdf    # Matrix-free PCG for RKHS
 └── datasets/
     ├── first_proof_benchmark_results.xlsx       # Full audited dataset (formula-linked)
     ├── csv/                                     # Machine-readable CSV exports
@@ -482,7 +481,8 @@ flowchart TD
         ├── aggregate_metrics.yaml               # Nested counts, rates, distributions, gap analysis
         ├── process_traces.yaml                  # High-leverage steps with contributions
         ├── cross_problem_patterns.yaml          # Patterns with evidence and testable implications
-        └── overview.yaml                        # Pilot summary, metric dictionary, verdict labels
+        ├── overview.yaml                        # Pilot summary, metric dictionary, verdict labels
+        └── first_proof_benchmark_results.yaml  # All 6 sheets combined in one file
 ```
 
 ---
