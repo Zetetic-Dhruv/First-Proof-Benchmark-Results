@@ -8,7 +8,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18629234.svg)](https://doi.org/10.5281/zenodo.18629234)
 
-*The 10 benchmark problems were released and archived at the DOI above before any solutions were shared. This repository contains the audited solution attempts: a local open-source language model, 8 hours, consumer laptop, zero human intervention.*
+*Our proofs and solutions were archived at the DOI above before official solutions were released. This repository contains the full audited results: a local open-source language model, 8 hours, consumer laptop, zero human intervention.*
 
 </div>
 
@@ -441,12 +441,13 @@ If you use this dataset or reference these results, please cite:
   author       = {Gupta, Dhruv and Samanway},
   year         = {2026},
   howpublished = {\url{https://github.com/Zetetic-Dhruv/First-Proof-Benchmark-Results}},
-  note         = {Audited solution attempts for 10 open research-level mathematics problems.
-                  The benchmark problems were released and archived before solutions were
-                  shared, see DOI below. With acknowledgement to Ram Singla.}
+  note         = {Audited solution attempts for 10 open research-level mathematics problems
+                  from the First Proof benchmark. Our proofs were publicly archived at
+                  doi:10.5281/zenodo.18629234 before official solutions were released.
+                  With acknowledgement to Ram Singla.}
 }
 ```
 
-The original 10 benchmark problems are archived at:
+Our solutions and proofs are archived at:
 
-> Dhruv Gupta. *First Proof Benchmark Problems.* Zenodo, 2026. [doi:10.5281/zenodo.18629234](https://doi.org/10.5281/zenodo.18629234)
+> Dhruv Gupta, Samanway. *First Proof Benchmark: Autonomous Proof Discovery Results.* Zenodo, 2026. [doi:10.5281/zenodo.18629234](https://doi.org/10.5281/zenodo.18629234)
