@@ -1,0 +1,87 @@
+First Proof Benchmark Results
+Copyright 2026 Dhruv Gupta and Samanway
+With acknowledgement to Ram Singla.
+
+================================================================================
+
+ATTRIBUTION AND PRIOR ART NOTICE
+
+This work establishes prior art for the following contributions. Any use,
+reproduction, derivative work, or reference to the contents of this repository
+must include attribution to the original authors as specified below.
+
+1. STRUCTURED DISCOVERY PROTOCOL
+
+   The structured discovery state tracking method described in this repository,
+   including but not limited to: treating proof search as navigation over an
+   explicit ignorance partition; the four-gate measurement framework (assumption
+   compliance, inference validity, goal completion, generalization robustness);
+   the structured ignorance log; and the ignorance narrowing dynamics (diffuse
+   uncertainty to precise hypothesis spaces to incompleteness estimates), is the
+   original work of Dhruv Gupta and Samanway.
+
+2. AUDITED PROOF ATTEMPTS AND DATASET
+
+   The 85 audited proof steps, 10 proof-level rollups, process traces, and
+   cross-problem patterns contained in this repository are the original work
+   of Dhruv Gupta and Samanway. The proofs were publicly archived at
+   doi:10.5281/zenodo.18629234 before official solutions to the First Proof
+   benchmark were released.
+
+3. PROOF DOCUMENTS
+
+   The proof attempt documents (zetesis_proof_attempt_P1.pdf through
+   zetesis_proof_attempt_P10.pdf) are the original work of Dhruv Gupta and
+   Samanway, produced autonomously via the structured discovery protocol
+   described above.
+
+================================================================================
+
+REQUIRED ATTRIBUTION
+
+Any use of this work, in whole or in part, including but not limited to
+academic publications, technical reports, blog posts, software systems,
+AI training datasets, benchmark comparisons, or derivative datasets, must
+include the following citation:
+
+   Gupta, D. and Samanway. "First Proof Benchmark Results: Autonomous Proof
+   Discovery Pilot." 2026.
+   GitHub: https://github.com/Zetetic-Dhruv/First-Proof-Benchmark-Results
+   Zenodo: https://doi.org/10.5281/zenodo.18629234
+
+Or in BibTeX form:
+
+   @misc{gupta2026firstproofresults,
+     title        = {First Proof Benchmark Results: Autonomous Proof Discovery Pilot},
+     author       = {Gupta, Dhruv and Samanway},
+     year         = {2026},
+     howpublished = {\url{https://github.com/Zetetic-Dhruv/First-Proof-Benchmark-Results}},
+     note         = {doi:10.5281/zenodo.18629234}
+   }
+
+This attribution requirement applies under Section 4(c) and 4(d) of the
+Apache License, Version 2.0, which requires retention of all copyright,
+patent, trademark, and attribution notices, and reproduction of NOTICE file
+contents in any derivative works.
+
+================================================================================
+
+PRIOR ART TIMELINE
+
+   2026-02-05   First Proof benchmark problems released by Abouzaid et al.
+   2026-02-13   Benchmark solution deadline
+   2026-02-13   Our proofs archived to Zenodo (doi:10.5281/zenodo.18629234)
+                before official solutions were published
+   2026-03      Full audited dataset and structured discovery protocol
+                published to this repository
+
+================================================================================
+
+ACKNOWLEDGEMENT
+
+The First Proof benchmark problems are the work of Abouzaid, Blumberg,
+Hairer, Kileel, Kolda, Nelson, Spielman, Srivastava, Ward, Weinberger,
+and Williams (arXiv:2602.05192). We acknowledge their contribution in
+creating the benchmark that this work responds to.
+
+================================================================================
