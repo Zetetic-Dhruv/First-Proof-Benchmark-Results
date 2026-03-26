@@ -29,6 +29,8 @@ This is a process-level dataset, not a final-answer benchmark. It preserves the 
 - Cross-problem patterns yielding falsifiable hypotheses about when AI proof search succeeds or fails
 - A closed-loop measurement framework reusable for future AI proof discovery evaluation
 
+<sub><i>The discovery protocol is a pilot application of a formal theory of structured inquiry that treats proof search as navigation over an explicit ignorance partition. The four measurement gates, the ignorance log, and the narrowing dynamics are each derived (conceptually) from primitives in this framework. The epistemic state counter agent in code/ implements the state tracking during the autonomous run. This is part of a much larger body of planned work on synthetic discovery.</i></sub>
+
 ---
 
 ## Table of Contents
