@@ -1,8 +1,8 @@
 <div align="center">
 
-# First Proof Benchmark Results
+# Analysis of Synthetic Discovery of Math Proofs
 
-**Autonomous Proof Discovery Pilot, Public Dataset**
+**Autonomous Proof Discovery Pilot on Harvard's First Proof Benchmark, Public Dataset**
 
 [![Problems](https://img.shields.io/badge/Problems-10-blue)]() [![Proofs Accepted](https://img.shields.io/badge/Proofs_Accepted-4-brightgreen)]() [![Steps Audited](https://img.shields.io/badge/Steps_Audited-85-purple)]() [![Inference Validity](https://img.shields.io/badge/Inference_Validity-98%25-green)]() [![License](https://img.shields.io/badge/License-Apache_2.0-orange)](LICENSE)
 
