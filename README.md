@@ -1,6 +1,6 @@
 <div align="center">
 
-# Analysis of Synthetic Discovery of Math Proofs
+# Empirical Analysis of Synthetic Discovery of Math Proofs
 
 **Autonomous Proof Discovery Pilot on Harvard's First Proof Benchmark, Public Dataset**
 
