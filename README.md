@@ -307,11 +307,11 @@ flowchart TD
     I3 --> I4["Step T5: Precise residual\nCauchy-Schwarz bridge valid\nSingle gap identified"]
     I4 --> I5["Final state: Incompleteness estimate\nOne missing bound:\nsup_N E[ρ_N^-2] < ∞\nAll other dependencies resolved"]
 
-    style I1 fill:#fee,stroke:#c00
-    style I2 fill:#ffe,stroke:#aa0
-    style I3 fill:#ffe,stroke:#aa0
-    style I4 fill:#efd,stroke:#0a0
-    style I5 fill:#def,stroke:#06a
+    style I1 fill:#f5f5f5,stroke:#999
+    style I2 fill:#ececec,stroke:#888
+    style I3 fill:#e3e3e3,stroke:#777
+    style I4 fill:#dadada,stroke:#666
+    style I5 fill:#d0d0d0,stroke:#555
 ```
 
 The proof starts with diffuse ignorance (many plausible routes) and ends with a single, precisely identified missing premise. This structured residual is reusable: any future system attempting P1 can start from the precise gap rather than repeating the full search.
