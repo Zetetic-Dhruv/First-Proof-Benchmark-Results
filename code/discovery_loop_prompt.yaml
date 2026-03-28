@@ -28,23 +28,25 @@ operating_definitions:
     description: >
       The formal language used to describe mechanisms (rigorous LaTeX).
 
-  invariance:
-    alias: accuracy
+  four_gate_measurements:
     description: >
-      The probability that a specific mechanism is a valid step toward the
-      goal, regardless of its current formal completeness. High invariance
-      means high strategic confidence.
-
-  completeness:
-    alias: rigour
-    description: >
-      The degree to which a mechanism is formally decomposed into accepted
-      theorems and axioms.
+      Every mechanism is scored on four binary gates. These are the sole
+      signals used to track epistemic state and determine direction.
+    gates:
+      - name: assumption_compliance
+        description: "Does the step remain within the stated hypotheses?"
+      - name: inference_validity
+        description: "Is the mathematics of the step correct as written?"
+      - name: goal_completion
+        description: "Is the local objective achieved, not merely sketched?"
+      - name: generalization_robustness
+        description: "Does the step survive expansion to the full target?"
 
   design_intuition: >
-    Coarse adjustment of mechanisms (invariance), together with finer
-    adjustment of precision (completeness), mirrors how human agents
-    approach writing proofs. This avoids two failure modes:
+    Coarse adjustment of mechanisms (high assumption compliance and inference
+    validity, low goal completion or generalization robustness), together with
+    finer adjustment toward full completion and robust generalization, mirrors
+    how human agents approach writing proofs. This avoids two failure modes:
     (1) starting with full formal rigour but failing to capture the right ideas,
     (2) producing a proof that falls apart under scrutiny due to lack of precision.
 
@@ -59,17 +61,12 @@ proof_as_world_model:
     biases of the mathematician. This system uses a dual representation of
     proofs as epistemological objects, constructed through structured discovery.
 
-  isomorphism:
-    data: "context (accepted theorems and axioms)"
-    invariance: "accuracy (ability of mechanisms to modify goals toward trivial facts)"
-    completeness: "rigour (precision of decomposition into accepted theorems)"
-
 discovery_loop:
   description: >
     For every iteration, the engine executes the following 8 steps.
     The epistemic state recorder prompts the engine to loop, tracking
-    four binary measurements at each step. Direction emerges from the
-    measurements, not from any predetermined plan.
+    the four binary measurements at each step. Direction emerges from
+    the measurements, not from any predetermined plan.
 
   steps:
     - step: 1
@@ -98,22 +95,22 @@ discovery_loop:
         "algebraic approach"). Discard immediately contradictory mechanisms.
 
     - step: 4
-      name: invariance_agent
+      name: scoring_agent
       role: scorer
       action: >
-        Score known knowns: if a new, large coherent group of candidates
-        suggests a known known is actually a dead end, penalize its
-        invariance score. Score known unknowns: assign a default low
-        invariance, raise the score if the mechanism belongs to a large,
-        logically coherent subclass (consensus leads to higher initial trust).
+        Score each candidate mechanism on the four gates. For known knowns:
+        if a new, large coherent group of candidates suggests an accepted
+        step is actually a dead end, downgrade its gate scores. For known
+        unknowns: assign default low scores, raise if the mechanism belongs
+        to a large, logically coherent subclass.
 
     - step: 5
       name: inquiry_agent
       role: validator
       action: >
-        Identify mechanisms with low invariance (shaky strategic steps) or
-        low completeness (hand-wavy steps). Propose a specific validation
-        task.
+        Identify mechanisms with low inference validity (mathematically
+        shaky steps) or low goal completion (steps that sketch but do not
+        close). Propose a specific validation task.
       examples:
         - "Attempt to formally prove Lemma 3.2 using induction."
         - "Search for a counter-example to Strategy B for n=1."
@@ -132,45 +129,33 @@ discovery_loop:
       name: state_of_health
       role: metrics
       measurements:
-        completeness:
-          formula: "steps_resolved_to_axioms / total_steps_in_proof_path"
-          alias: rigour
-        invariance:
-          formula: "weighted_confidence_of_current_path"
-          alias: accuracy
+        assumption_compliance:
+          description: "Fraction of steps remaining within stated hypotheses."
+        inference_validity:
+          description: "Fraction of steps with correct mathematics."
+        goal_completion:
+          description: "Fraction of steps whose local objective is achieved."
+        generalization_robustness:
+          description: "Fraction of steps that survive expansion to the full target."
       stop_condition: >
-        If completeness > 0.99 and invariance > 0.99, output the final proof.
+        If all four gate rates exceed 0.99, output the final proof.
 
     - step: 8
       name: loop
       action: >
         Based on the state of health, return to step 2 (imagination) to
-        bridge remaining gaps or correct low-invariance steps.
+        bridge remaining gaps or correct steps with low gate scores.
 
 epistemic_state_recorder:
   description: >
     A separate agent that prompts the discovery engine to iterate. It does
     not care about the exact text the engine produces. It tracks the
-    epistemic state using four binary measurements at each step:
+    epistemic state using the four binary measurements at each step:
     assumption compliance, inference validity, goal completion, and
     generalization robustness. Based on these measurements, it updates
     a four-item ledger and uses the ledger to discover the next step
     and overall direction. Direction is emergent from measurements,
     not from any plan.
-
-  measurements:
-    - name: assumption_compliance
-      type: binary
-      description: "Does the step remain within stated hypotheses?"
-    - name: inference_validity
-      type: binary
-      description: "Is the mathematics of the step correct as written?"
-    - name: goal_completion
-      type: binary
-      description: "Is the local objective achieved, not merely sketched?"
-    - name: generalization_robustness
-      type: binary
-      description: "Does the step survive expansion to the full target?"
 
   principle: >
     The recorder does not prescribe direction. It measures state, and
