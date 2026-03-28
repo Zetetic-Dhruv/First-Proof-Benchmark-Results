@@ -275,6 +275,22 @@ The protocol has three components:
 
 **2. Structured ignorance logging.** The system maintains an explicit record of what the model knows it does not know. This includes unverified premises, unresolved bridge lemmas, untested generalization paths, and conditional dependencies. The model prints what it knows it does not know; this output updates the four-item ledger, which in turn determines the next discovery step. The log is not a list of failures; it is the navigation surface.
 
+Concrete example from Problem 1 ($\Phi^4_3$ singularity), step T5 (inverse density argument):
+
+> **Model output:** "The Cauchy-Schwarz bridge is algebraically valid, but the required negative-moment bound $\sup_N \mathbb{E}_{\mu_N}[\rho_N^{-2}] < \infty$ is not established. The step is conditional on this premise."
+>
+> **Ledger update:**
+> | Gate | Previous (T4) | Current (T5) | Reason |
+> |------|---------------|--------------|--------|
+> | Assumption compliance | 1 | 1 | Step stays within $\Phi^4_3$ measure theory |
+> | Inference validity | 1 | 1 | Cauchy-Schwarz application is correct |
+> | Goal completion | 1 | 0 | Local objective not achieved, conditional on unverified bound |
+> | Generalization robustness | 1 | 1 | If the bound holds, the argument transports |
+>
+> **Discovered next direction:** Goal completion dropped from 1 to 0. The ledger signals the bottleneck is an unverified premise, not an invalid inference or a scope violation. The next iteration targets establishing or refuting $\sup_N \mathbb{E}_{\mu_N}[\rho_N^{-2}] < \infty$ specifically, rather than exploring alternative proof routes.
+
+The key point: the system did not plan to focus on the negative-moment bound. The drop in the goal completion gate forced that focus. Direction was discovered from the measurement, not prescribed.
+
 **3. Ignorance narrowing.** Across the proof search, the structure of ignorance changes. The system tracks this evolution: from diffuse uncertainty (many plausible routes, no clear obstruction) to precise hypothesis spaces (a single identified gap with known boundary conditions) to incompleteness estimates (a quantified statement of what remains).
 
 ```mermaid
