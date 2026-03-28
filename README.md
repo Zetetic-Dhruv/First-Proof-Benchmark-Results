@@ -265,13 +265,15 @@ The [First Proof](https://arxiv.org/abs/2602.05192) benchmark was created by 11 
 
 ### Our Method: Structured Discovery State Tracking
 
-The key contribution of this work is not the choice of model but the approach. We ran GPT-5.2 via consumer API access (~$32 total compute cost for the full 8-hour run across all 10 problems), but treated each proof attempt as a **world model** and imposed a structured discovery protocol on top of it.
+The key contribution of this work is not the choice of model but the approach. We ran GPT-5.2 via consumer API access (~$32 total compute cost for the full 8-hour run across all 10 problems), but treated each proof attempt as a **world model**: an epistemological object constructed through structured discovery, not through linear text generation.
+
+On the surface, generating a proof appears to be a search problem in the representation space: finding the right sequence of well-formed formulas. If this were true in practice, writing down any proof would become impossible after the 1700s due to the sheer size of the space. The construction of proofs involves stringing together mechanisms whose selection is guided by the cognitive biases of the mathematician. We use a dual representation of proofs as world models, where coarse adjustment of mechanisms (strategic accuracy) and finer adjustment of precision (formal rigour) mirror how human agents actually write proofs.
 
 The protocol has three components:
 
-**1. Four-gate measurement at every step.** Each candidate proof step is scored on assumption compliance, inference validity, goal completion, and generalization robustness. These measurements are not post-hoc; they are tracked in real time during the search, standardizing the discovery state across all 10 problems.
+**1. Four-gate measurement at every step.** Each candidate proof step is scored on four binary measurements: assumption compliance, inference validity, goal completion, and generalization robustness. These are tracked in real time during the search. The system does not care about the exact text the model produces at each step. It tracks the epistemic state through these four binary signals, updates a four-item ledger, and uses that ledger to discover the next step and overall direction. Direction is emergent from the measurements, not from any predetermined plan. This is discovered directionality, not planned search. The epistemic state recorder agent (see `code/discovery_loop_prompt.yaml`) implements this tracking.
 
-**2. Structured ignorance logging.** The system maintains an explicit record of what the model knows it does not know. This includes unverified premises, unresolved bridge lemmas, untested generalization paths, and conditional dependencies. The log is not a list of failures; it is a map of the current boundary of knowledge.
+**2. Structured ignorance logging.** The system maintains an explicit record of what the model knows it does not know. This includes unverified premises, unresolved bridge lemmas, untested generalization paths, and conditional dependencies. The model prints what it knows it does not know; this output updates the four-item ledger, which in turn determines the next discovery step. The log is not a list of failures; it is the navigation surface.
 
 **3. Ignorance narrowing.** Across the proof search, the structure of ignorance changes. The system tracks this evolution: from diffuse uncertainty (many plausible routes, no clear obstruction) to precise hypothesis spaces (a single identified gap with known boundary conditions) to incompleteness estimates (a quantified statement of what remains).
 
@@ -315,6 +317,16 @@ flowchart TD
 ```
 
 The proof starts with diffuse ignorance (many plausible routes) and ends with a single, precisely identified missing premise. This structured residual is reusable: any future system attempting P1 can start from the precise gap rather than repeating the full search.
+
+### Concrete Finding: Generalization Failure and Bridge Lemma Discovery
+
+The most common failure mode in this pilot is generalization failure: a locally valid argument that does not survive transport to the full target. The empirical analysis reveals two distinct types:
+
+1. **Bridge failures.** The ignorance state is well characterized, the gap is precise, and the missing piece is a specific bridge lemma connecting a known local result to the target. These are structurally tractable: the system names the wall, locates it, and proves it is real (e.g., P1's single missing bound, P2's diagonal-to-full-integral bridge).
+
+2. **Open-ended failures.** The ignorance state is diffuse, no single bridge is identified, and the system stalls because it cannot construct a new coordinate system entirely (e.g., P3's combinatorial object whose partition function must produce target polynomials, P4's replacement for non-additive invariants at degree $\geq 4$).
+
+The concrete next step this analysis motivates: when the ignorance state is well characterized and the failure is a bridge failure, an explicit **bridge lemma discovery agent** can be deployed to close the gap. This is a solvable task with well-defined inputs (the two endpoints of the bridge) and should be the first extension of this protocol.
 
 ### Landscape of Submissions
 
@@ -456,7 +468,8 @@ flowchart TD
 ├── assets/
 │   ├── proof_outcomes.svg               # Quadrant chart of proof outcomes
 │   └── comparison_grid.svg              # Problem-by-problem comparison across submissions
-├── code/                                # Scripts and tooling
+├── code/
+│   └── discovery_loop_prompt.yaml       # Discovery engine system prompt
 ├── proofs/
 │   ├── zetesis_proof_attempt_P1.pdf     # Phi^4_3 measure singularity
 │   ├── zetesis_proof_attempt_P2.pdf     # Rankin-Selberg local test vector
